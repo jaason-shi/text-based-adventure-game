@@ -5,15 +5,16 @@ Every program needs a README.md
 This is written in markdown. Read about markdown here: [markdowncheatsheet](https://www.markdownguide.org/cheat-sheet/)
 
 ## Your name:
-Natalie Yu
-Jason Shi
+- Natalie Yu
+- Jason Shi
 
 ## Your student number:
-Natalie - A01026043
-Jason - 
+- Natalie: A01026043
+- Jason: A00931051
 
 ## Your GitHub account ID:
-nataliecly
+- nataliecly
+- jaason-shi
 
 
 ## Any important comments you'd like to make about your work:
