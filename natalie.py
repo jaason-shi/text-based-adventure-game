@@ -8,6 +8,13 @@
 #         # Tell the user where they are
 #         describe_current_location(board, character)
 
+def make_board(rows, columns):
+    board_dict = {}
+    for row in range(rows):
+        for column in range(columns):
+            board_dict[(row, column)] = "x"
+    return board_dict
+
 
 def make_character():
     character_name = input("Please enter a name for your character: ")
@@ -15,24 +22,62 @@ def make_character():
             "X-coordinate": 0, "Y-coordinate": 0}
 
 
-print(make_character())
+rows = 10
+columns = 10
+board = make_board(rows, columns)
 
 
-# def make_board(rows, columns):
-#     board = {}
-#     for row in range(rows):
-#         for column in range(columns):
-#             board[(row, column)] = "x"
-#     return board
+def describe_current_location(board):
+    for x in range(rows):
+        for y in range(columns):
+            print(board[(x, y)], end=' ')
+        print()
+
+
+print(describe_current_location(board))
+
+
+
+# # insert data into dictionary
+# dict1 = {(0, 0): 'Samuel', (0, 1): 21, (0, 2): 'Data structures',
+#          (1, 0): 'Richie', (1, 1): 20, (1, 2): 'Machine Learning',
+#          (2, 0): 'Lauren', (2, 1): 21, (2, 2): 'OOPS with Java'
+#          }
 #
+# # Iterate through the dictionary
+# # to print the data.
+# for i in range(3):
 #
+#     for j in range(3):
+#         print(dict1[(i, j)], end='   ')
+#
+#     print()
+
+
+
+
+
+
 # print(make_board(10, 10))
 
 
-# def describe_current_location(board):
-#     board += '\n'
-#     # character = 1, 0
-#     print(board)
+
+# print(make_character())
+
+
+# def describe_current_location(board, character):
+#     for key in board:
+#         print("x" * rows)
 #
+#     # print(board)
+
+
+# Create a dictionary
+# k = 0
+# d = {}
+# for row in range(10):
+#      for column in range(10):
+#          d[k] = (row, column)
+#          k += 1
 #
-# print(describe_current_location(10, 10))
+# print(d)
