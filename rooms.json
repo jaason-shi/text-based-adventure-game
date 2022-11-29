@@ -1,0 +1,35 @@
+{
+  "rooms":
+  [
+    {
+      "riddles": "cafeteria"
+    },
+    {
+      "riddles": "schoolyard"
+    },
+    {
+      "riddles": "music room"
+    },
+    {
+      "riddles": "art room"
+    },
+    {
+      "riddles": "computer room"
+    },
+    {
+      "riddles": "library"
+    },
+    {
+      "riddles": "playground"
+    },
+    {
+      "riddles": "washroom"
+    },
+    {
+      "riddles": "lecture hall"
+    },
+    {
+      "riddles": "gymnasium"
+    }
+  ]
+}

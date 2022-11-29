@@ -1,0 +1,70 @@
+{
+  "riddles":
+  [
+    {
+      "riddles": "Using only addition, add eight 8's to get the number 1000",
+      "answer": "888 + 88 + 8 + 8 + 8",
+      "category": "easy"
+    },
+    {
+      "riddles": "A duck was given $9, a spider was given $36, and a bee was given $27. How much money would be give to a cat?",
+      "answer": "$18",
+      "category": "medium"
+    },
+    {
+      "riddles": "I am a three-digit number. My tens digit is six more than my ones digit. My hundreds digit is eight less than my tens digit. What number am I?",
+      "answer": "193",
+      "category": "easy"
+    },
+    {
+      "riddles": "What occurs twice a WEEK, once a YEAR, but never in a DAY?",
+      "answer": "E",
+      "category": "easy"
+    },
+    {
+      "riddles": "Jason is 54 years old and his mother is 80, how many years ago was Jason's mother three times her age?",
+      "answer": "41",
+      "category": "medium"
+    },
+    {
+      "riddles": "What number do you get when you multiply all of the numbers on a telephone's number pad?",
+      "answer": "0",
+      "category": "medium"
+    },
+    {
+      "riddles": "A grandfather, two fathers, and two sons went to the movie theater together and everyone bought one movie ticket each. How many tickets did they buy in total?",
+      "answer": "3",
+      "category": "easy"
+    },
+    {
+      "riddles": "Beth went to the store and bought a shirt for $88. It had been discounted by 22%. What is the original price of the shirt?",
+      "answer": "$110",
+      "category": "easy"
+    },
+    {
+      "riddles": "If Nancy can paint a house in 4 hours, and Max can paint the same house in 6 hours. How long will it take for both to paint a house? Answer in minutes.",
+      "answer": "144",
+      "category": "medium"
+    },
+    {
+      "riddles": "If the cost of a bat and a baseball combined is $1.10 and the bat costs $1.00 more than the ball, how much is the ball?",
+      "answer": "$0.05",
+      "category": "medium"
+    },
+    {
+      "riddles": "An airplane flies against the wind from A to B in 8 hours. The same airplane returns from B to A in the same direction as the wind, in 7 hours. Find the ratio of the speed of the airplane to the speed of the wind.",
+      "answer": "15",
+      "category": "hard"
+    },
+    {
+      "riddles": "An airplane flies against the wind from A to B in 8 hours. The same airplane returns from B to A in the same direction as the wind, in 7 hours. Find the ratio of the speed of the airplane to the speed of the wind.",
+      "answer": "15",
+      "category": "hard"
+    },
+    {
+      "riddles": "The product of two consecutive negative even integers is 24. What is the smaller of the two numbers?"
+      "answer": "-6",
+      "category": "hard"
+    },
+  ]
+}
