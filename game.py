@@ -8,7 +8,7 @@ def character_name() -> str:
     return input()
 
 
-def make_character(name):
+def make_character(name: str) -> dict:
     return {'name': name,
             'level': 1,
             'attempts': 3,
