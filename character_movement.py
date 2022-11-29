@@ -12,14 +12,16 @@ movements = ['Up', 'Down', 'Left', 'Right']
 
 
 def get_user_choice(choices: list) -> int:
-    print("Where would you like to go?")
-    for number, choice in enumerate(choices, 1):
-        print(number, choice)
-    player_choice = int(input("Please enter a number to move: "))
-    if 1 <= player_choice <= len(choices):
-        return player_choice
-    else:
-        print("That doesn't work! Please try again.")
+    while True:
+        print("Where would you like to go?")
+        for number, choice in enumerate(choices, 1):
+            print(number, choice)
+        player_choice = int(input("Please enter a number to move: "))
+        if 1 <= player_choice <= len(choices):
+            return player_choice
+        else:
+            print("That doesn't work! Please try again.")
+        return
 
 
 # print(get_user_choice(movements))
@@ -27,47 +29,69 @@ def get_user_choice(choices: list) -> int:
 ############
 
 
-def make_character():
-    character_name = input("Please enter a name for your character: ")
-    return {'name': character_name,
+def make_board(rows, columns):
+    board_dict = {}
+    for row in range(rows):
+        for column in range(columns):
+            board_dict[(row, column)] = "x"
+    return board_dict
+
+
+test_rows = 10
+test_columns = 10
+board = make_board(test_rows, test_columns)
+
+
+def character_name() -> str:
+    print("Please enter a name for your character: ")
+    return input()
+
+
+def make_character(name):
+    return {'name': name,
             'level': 1,
             'attempts': 3,
             'XP': 0,
-            'coordinates': (0, 0)}
+            'x-coordinate': 10,
+            'y-coordinate': 10}
 
 
-rows = 10
-columns = 10
-test_character = make_character()
+print(make_character(character_name()))
+
+
+test_character = make_character('nat')
 player_movement = get_user_choice(movements)
 
 
 def validate_move(width: int, height: int, character: dict, direction: int) -> bool:
-    if direction == 1 and character['coordinates'][1] < 1:
+    if direction == 1 and character['y-coordinate'] < 1:
         return False
-    if direction == 2 and character['coordinates'][1] == height:
+    if direction == 2 and character['y-coordinate'] == height:
         return False
-    if direction == 3 and character['coordinates'][0] < 1:
+    if direction == 3 and character['x-coordinate'] < 1:
         return False
-    if direction == 4 and character['coordinates'][0] == width:
+    if direction == 4 and character['x-coordinate'] == width:
         return False
     else:
         return True
 
 
-print(validate_move(rows, columns, test_character, player_movement))
+print(validate_move(test_rows, test_columns, test_character, player_movement))
 
 
-def move_character(character):
+def move_character(direction, board_param, character):
     if player_movement == 1:
-        character['coordinates'] =
-    # if player_movement == 2:
-    #     character['coordinates'][1] -= 1
-    # if player_movement == 3:
-    #     character['coordinates'][0] -= 1
-    # if player_movement == 4:
-    #     character['coordinates'][0] += 1
-    # return character
+        character['y-coordinate'] += 1
+    if player_movement == 2:
+        character['y-coordinate'] -= 1
+    if player_movement == 3:
+        character['x-coordinate'] -= 1
+    if player_movement == 4:
+        character['x-coordinate'] += 1
+    return character
 
 
-print(move_character(test_character))
+print(move_character(1, board, test_character))
+
+
+
