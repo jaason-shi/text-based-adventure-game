@@ -8,33 +8,57 @@
 #         # Tell the user where they are
 #         describe_current_location(board, character)
 
-def make_board(rows, columns):
-    board_dict = {}
-    for row in range(rows):
-        for column in range(columns):
-            board_dict[(row, column)] = "x"
-    return board_dict
+
+# THIS ONE  ##
+
+# def make_board(rows, columns):
+#     board_dict = {}
+#     for row in range(rows):
+#         for column in range(columns):
+#             board_dict[(row, column)] = "x"
+#     return board_dict
+#
+#
+# print(make_board(10, 10))
 
 
-def make_character():
-    character_name = input("Please enter a name for your character: ")
-    return {'name': character_name, 'level': 1, 'attempts': 3, 'XP': 0,
-            "X-coordinate": 0, "Y-coordinate": 0}
+def character_name() -> str:
+    print("Please enter a name for your character: ")
+    return input()
 
 
-rows = 10
-columns = 10
-board = make_board(rows, columns)
+def make_character(name):
+    return {'name': name,
+            'level': 1,
+            'attempts': 3,
+            'XP': 0,
+            'coordinates': (5, 3)}
 
 
-def describe_current_location(board):
-    for x in range(rows):
-        for y in range(columns):
-            print(board[(x, y)], end=' ')
-        print()
+# character = make_character('nat')
+print(make_character(character_name()))
 
 
-print(describe_current_location(board))
+
+## INFO
+# rows = 10
+# columns = 10
+# board = make_board(rows, columns)
+#
+# def get_user_choice()
+
+
+# character = make_character("Player name")
+
+
+# def describe_current_location(board):
+#     for x in range(rows):
+#         for y in range(columns):
+#             print(board[(x, y)], end=' ')
+#         print()
+#
+#
+# print(describe_current_location(board))
 
 
 
@@ -53,13 +77,7 @@ print(describe_current_location(board))
 #
 #     print()
 
-
-
-
-
-
 # print(make_board(10, 10))
-
 
 
 # print(make_character())
