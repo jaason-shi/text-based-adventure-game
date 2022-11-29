@@ -11,7 +11,7 @@
 movements = ['Up', 'Down', 'Left', 'Right']
 
 
-def get_user_choice(choices):
+def get_user_choice(choices: list) -> int:
     print("Where would you like to go?")
     for number, choice in enumerate(choices, 1):
         print(number, choice)
@@ -39,10 +39,10 @@ def make_character():
 rows = 10
 columns = 10
 test_character = make_character()
-test_direction = get_user_choice(movements)
+player_movement = get_user_choice(movements)
 
 
-def validate_move(width, height, character, direction):
+def validate_move(width: int, height: int, character: dict, direction: int) -> bool:
     if direction == 1 and character['coordinates'][1] < 1:
         return False
     if direction == 2 and character['coordinates'][1] == height:
@@ -55,4 +55,19 @@ def validate_move(width, height, character, direction):
         return True
 
 
-print(validate_move(rows, columns, test_character, test_direction))
+print(validate_move(rows, columns, test_character, player_movement))
+
+
+def move_character(character):
+    if player_movement == 1:
+        character['coordinates'] =
+    # if player_movement == 2:
+    #     character['coordinates'][1] -= 1
+    # if player_movement == 3:
+    #     character['coordinates'][0] -= 1
+    # if player_movement == 4:
+    #     character['coordinates'][0] += 1
+    # return character
+
+
+print(move_character(test_character))
