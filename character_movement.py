@@ -12,16 +12,14 @@ movements = ['Up', 'Down', 'Left', 'Right']
 
 
 def get_user_choice(choices: list) -> int:
-    while True:
-        print("Where would you like to go?")
-        for number, choice in enumerate(choices, 1):
-            print(number, choice)
-        player_choice = int(input("Please enter a number to move: "))
-        if 1 <= player_choice <= len(choices):
-            return player_choice
-        else:
-            print("That doesn't work! Please try again.")
-        return
+    print("Where would you like to go?")
+    for number, choice in enumerate(choices, 1):
+        print(number, choice)
+    player_choice = int(input("Please enter a number to move: "))
+    if 1 <= player_choice <= len(choices):
+        return player_choice
+    else:
+        print("That doesn't work! Please try again.")
 
 
 # print(get_user_choice(movements))
@@ -79,7 +77,7 @@ def validate_move(width: int, height: int, character: dict, direction: int) -> b
 print(validate_move(test_rows, test_columns, test_character, player_movement))
 
 
-def move_character(character):
+def move_character(character: dict) -> None:
     if player_movement == 1:
         character['y-coordinate'] -= 1
     if player_movement == 2:
@@ -88,12 +86,15 @@ def move_character(character):
         character['x-coordinate'] -= 1
     if player_movement == 4:
         character['x-coordinate'] += 1
-    return character
 
 
 print(move_character(test_character))
 
 
+def describe_current_location(character):
+    return character['x-coordinate'], character['y-coordinate']
 
+
+print(describe_current_location(test_character))
 
 
