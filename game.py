@@ -2,6 +2,7 @@
 Name
 Student Number
 """
+import time
 
 
 def make_board(rows, columns):
@@ -83,6 +84,9 @@ def game():  # called from main
     #             if character_has_leveled():
     #                 execute_glow_up_protocol()
     #     achieved_goal = check_if_goal_attained(board, character)
+        else:
+            print("You can't go there!")
+            time.sleep(1)
     # else:
     #     Tell the user they can't go in that direction
 # Print end of game stuff like congratulations or sorry you died
