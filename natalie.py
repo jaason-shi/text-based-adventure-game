@@ -32,7 +32,9 @@ def make_character(name: str) -> dict:
             'level': 1,
             'attempts': 3,
             'XP': 0,
-            'coordinates': (5, 3)}
+            'x-coordinate': 10,
+            'y-coordinate': 10}
+
 
 print(make_character(character_name()))
 
