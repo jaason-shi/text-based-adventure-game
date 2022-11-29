@@ -2,10 +2,10 @@
 # get_user_choice -> show choices, player chooses where they want character to move
 # validate_move -> checks if movement is possible on the board
 # move_character -> if valid_move is True, move character (character's coordinates change)
-# if player chooses move up, character['coordinates'][1]  +1
-# if player chooses move down, character['coordinates'][1] -1
-# if player chooses move left, character['coordinates'][0] -1
-# if player chooses move right, character['coordinates'][0] +1
+# if player chooses move up, character['y-coordinate'] -1
+# if player chooses move down, character['y-coordinate'] +1
+# if player chooses move left, character['x-coordinate'] -1
+# if player chooses move right, character['x-coordinate'] +1
 # describe_current_location -> character's new location -> character['coordinates']
 
 movements = ['Up', 'Down', 'Left', 'Right']
@@ -79,11 +79,11 @@ def validate_move(width: int, height: int, character: dict, direction: int) -> b
 print(validate_move(test_rows, test_columns, test_character, player_movement))
 
 
-def move_character(direction, board_param, character):
+def move_character(character):
     if player_movement == 1:
-        character['y-coordinate'] += 1
-    if player_movement == 2:
         character['y-coordinate'] -= 1
+    if player_movement == 2:
+        character['y-coordinate'] += 1
     if player_movement == 3:
         character['x-coordinate'] -= 1
     if player_movement == 4:
@@ -91,7 +91,9 @@ def move_character(direction, board_param, character):
     return character
 
 
-print(move_character(1, board, test_character))
+print(move_character(test_character))
+
+
 
 
 
