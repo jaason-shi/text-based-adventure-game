@@ -24,7 +24,7 @@ def make_character(name: str) -> dict:
             'attempts': 3,
             'XP': 0,
             'x-coordinate': 10,
-            'y-coordinate': 10}
+            'y-coordinate': 1}
 
 
 def get_user_choice(choices: list) -> int:
@@ -85,8 +85,9 @@ def game():  # called from main
     #                 execute_glow_up_protocol()
     #     achieved_goal = check_if_goal_attained(board, character)
         else:
-            print("You can't go there!")
-            time.sleep(1)
+            print("Ah! You can't go there!")
+            print(f"You current location is {character['x-coordinate'], character['y-coordinate']}")
+            time.sleep(2)
     # else:
     #     Tell the user they can't go in that direction
 # Print end of game stuff like congratulations or sorry you died
