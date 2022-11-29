@@ -8,7 +8,7 @@
 # if player chooses move right, character['coordinates'][0] +1
 # describe_current_location -> character's new location -> character['coordinates']
 
-directions = ["Up", "Down", "Left", "Right"]
+movements = ['Up', 'Down', 'Left', 'Right']
 
 
 def get_user_choice(choices):
@@ -22,4 +22,37 @@ def get_user_choice(choices):
         print("That doesn't work! Please try again.")
 
 
-print(get_user_choice(directions))
+# print(get_user_choice(movements))
+
+############
+
+
+def make_character():
+    character_name = input("Please enter a name for your character: ")
+    return {'name': character_name,
+            'level': 1,
+            'attempts': 3,
+            'XP': 0,
+            'coordinates': (0, 0)}
+
+
+rows = 10
+columns = 10
+test_character = make_character()
+test_direction = get_user_choice(movements)
+
+
+def validate_move(width, height, character, direction):
+    if direction == 1 and character['coordinates'][1] < 1:
+        return False
+    if direction == 2 and character['coordinates'][1] == height:
+        return False
+    if direction == 3 and character['coordinates'][0] < 1:
+        return False
+    if direction == 4 and character['coordinates'][0] == width:
+        return False
+    else:
+        return True
+
+
+print(validate_move(rows, columns, test_character, test_direction))
