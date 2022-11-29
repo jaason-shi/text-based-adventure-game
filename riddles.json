@@ -1,5 +1,5 @@
 {
-  "riddles":
+  "riddles_list":
   [
     {
       "riddles": "Using only addition, add eight 8's to get the number 1000",
@@ -62,9 +62,9 @@
       "category": "hard"
     },
     {
-      "riddles": "The product of two consecutive negative even integers is 24. What is the smaller of the two numbers?"
+      "riddles": "The product of two consecutive negative even integers is 24. What is the smaller of the two numbers?",
       "answer": "-6",
       "category": "hard"
-    },
+    }
   ]
 }
