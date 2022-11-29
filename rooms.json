@@ -2,34 +2,34 @@
   "rooms":
   [
     {
-      "riddles": "cafeteria"
+      "room": "cafeteria"
     },
     {
-      "riddles": "schoolyard"
+      "room": "schoolyard"
     },
     {
-      "riddles": "music room"
+      "room": "music room"
     },
     {
-      "riddles": "art room"
+      "room": "art room"
     },
     {
-      "riddles": "computer room"
+      "room": "computer room"
     },
     {
-      "riddles": "library"
+      "room": "library"
     },
     {
-      "riddles": "playground"
+      "room": "playground"
     },
     {
-      "riddles": "washroom"
+      "room": "washroom"
     },
     {
-      "riddles": "lecture hall"
+      "room": "lecture hall"
     },
     {
-      "riddles": "gymnasium"
+      "room": "gymnasium"
     }
   ]
 }
