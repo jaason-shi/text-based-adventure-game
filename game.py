@@ -4,6 +4,14 @@ Student Number
 """
 
 
+def make_character():
+    character_name = input("Please enter a name for your character: ")
+    return {'name': character_name,
+            'level': 1,
+            'attempts': 3,
+            'XP': 0,
+            'coordinates': (5, 5)}
+
 def game():  # called from main
     rows = 10
     columns = 10
