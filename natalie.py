@@ -22,21 +22,21 @@
 # print(make_board(10, 10))
 
 
-def character_name() -> str:
-    print("Please enter a name for your character: ")
-    return input()
-
-
-def make_character(name: str) -> dict:
-    return {'name': name,
-            'level': 1,
-            'attempts': 3,
-            'XP': 0,
-            'x-coordinate': 10,
-            'y-coordinate': 10}
-
-
-print(make_character(character_name()))
+# def character_name() -> str:
+#     print("Please enter a name for your character: ")
+#     return input()
+#
+#
+# def make_character(name: str) -> dict:
+#     return {'name': name,
+#             'level': 1,
+#             'attempts': 3,
+#             'XP': 0,
+#             'x-coordinate': 10,
+#             'y-coordinate': 10}
+#
+#
+# print(make_character(character_name()))
 
 
 
@@ -99,3 +99,30 @@ print(make_character(character_name()))
 #          k += 1
 #
 # print(d)
+
+import json
+from random import randint
+
+
+def make_board(rows: int, columns: int) -> dict:
+    board_dict = {}
+    get_rooms = open('rooms.json', 'r')
+    rooms = json.load(get_rooms)
+    for row in range(rows):
+        for column in range(columns):
+            if row == 0 and column == 0:
+                board_dict[(row, column)] = rooms["rooms_list"][randint(0, 9)]
+            elif row == 1 and column == 1:
+                board_dict[(row, column)] = rooms["rooms_list"][randint(0, 9)]
+            elif row == 2 and column == 2:
+                board_dict[(row, column)] = rooms["rooms_list"][randint(0, 9)]
+            elif row == 3 and column == 3:
+                board_dict[(row, column)] = rooms["rooms_list"][randint(0, 9)]
+            elif row == 4 and column == 4:
+                board_dict[(row, column)] = rooms["rooms_list"][randint(0, 9)]
+            # else:
+            #     board_dict[(row, column)] = {'room': 'hallway'}
+    return board_dict
+
+
+print(make_board(10, 10))
