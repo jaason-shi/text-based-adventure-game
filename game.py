@@ -3,13 +3,21 @@ Name
 Student Number
 """
 import time
+import json
+from random import randint
 
 
 def make_board(rows: int, columns: int) -> dict:
     board_dict = {}
+    get_rooms = open('rooms.json', 'r')
+    rooms = json.load(get_rooms)
+    hallway = {'room': 'hallway'}
     for row in range(rows):
         for column in range(columns):
-            board_dict[(row, column)] = "x"
+            if row == randint(0, 9) or column == randint(0, 9):
+                board_dict[(row, column)] = rooms["rooms_list"][randint(0, 9)]
+            else:
+                board_dict[(row, column)] = hallway
     return board_dict
 
 
