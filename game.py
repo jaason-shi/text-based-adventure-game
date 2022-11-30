@@ -31,8 +31,14 @@ def make_character(name: str) -> dict:
             'level': 1,
             'attempts': 3,
             'XP': 0,
-            'x-coordinate': 10,
+            'x-coordinate': 9,
             'y-coordinate': 1}
+
+
+def describe_current_location(board, character):
+    character_coordinate = character['x-coordinate'], character['y-coordinate']
+    character_location_on_board = board[character_coordinate]['room']
+    print(f"Your current location is: {character_location_on_board}")
 
 
 def get_user_choice(choices: list) -> int:
@@ -101,12 +107,13 @@ def game():  # called from main
     achieved_goal = False
     while not achieved_goal:
         # Tell the user where they are
-        # describe_current_location(board, character)
+        describe_current_location(board, character)
+        time.sleep(2)
         direction = get_user_choice(movements)
         valid_move = validate_move(rows, columns, character, direction)
         if valid_move:
             move_character(character, direction)
-    #         describe_current_location(board, character)
+            describe_current_location(board, character)
     #         there_is_a_challenge = check_for_challenges()
     #         if there_is_a_challenge:
     #             execute_challenge_protocol(character)
