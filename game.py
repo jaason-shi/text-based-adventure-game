@@ -68,6 +68,24 @@ def game():  # called from main
     movements = ['Up', 'Down', 'Left', 'Right']
     board = make_board(rows, columns)
     name = character_name()
+    print(f"Welcome to our math game, {name}! We hope you enjoy and practice your math skills. :)")
+    time.sleep(2)
+    print("Loading game...")
+    time.sleep(2)
+    print("""
+    \_/
+  --(_)--  .
+    / \   /_|
+          |-|
+    .-----' '-----.                                  __
+   /____[SCHOOL]___\                                ()))
+    | [] .-.-. [] |                                (((())
+  ..|____|_|_|____|..................................)(... 
+    """)
+    print("You have entered the math academy! We hope you enjoy your time as a student. Be ready to put your thinking cap on!")
+    time.sleep(3)
+    print("You are now walking inside...")
+    time.sleep(4)
     character = make_character(name)
     achieved_goal = False
     while not achieved_goal:
@@ -85,8 +103,8 @@ def game():  # called from main
     #                 execute_glow_up_protocol()
     #     achieved_goal = check_if_goal_attained(board, character)
         else:
-            print("Ah! You can't go there!")
-            print(f"You current location is {character['x-coordinate'], character['y-coordinate']}")
+            print("Ah! You can't go there. Please try again...")
+            print(f"Your current location is {character['x-coordinate'], character['y-coordinate']}")
             time.sleep(2)
     # else:
     #     Tell the user they can't go in that direction
