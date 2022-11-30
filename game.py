@@ -5,7 +5,7 @@ Student Number
 import time
 
 
-def make_board(rows, columns):
+def make_board(rows: int, columns: int) -> dict:
     board_dict = {}
     for row in range(rows):
         for column in range(columns):
