@@ -70,7 +70,7 @@ def game():  # called from main
     name = character_name()
     print(f"Welcome to our math game, {name}! We hope you enjoy and practice your math skills. :)")
     time.sleep(2)
-    print("Loading game...")
+    print("Loading...")
     time.sleep(2)
     print("""
     \_/
@@ -83,10 +83,13 @@ def game():  # called from main
   ..|____|_|_|____|..................................)(... 
     """)
     print("You have entered the math academy! We hope you enjoy your time as a student. Be ready to put your thinking cap on!")
-    time.sleep(3)
+    time.sleep(2)
     print("You are now walking inside...")
-    time.sleep(4)
+    time.sleep(1)
     character = make_character(name)
+    time.sleep(2)
+    print(f"Here are your character stats: {character}")
+    time.sleep(2)
     achieved_goal = False
     while not achieved_goal:
         # Tell the user where they are
@@ -104,7 +107,7 @@ def game():  # called from main
     #     achieved_goal = check_if_goal_attained(board, character)
         else:
             print("Ah! You can't go there. Please try again...")
-            print(f"Your current location is {character['x-coordinate'], character['y-coordinate']}")
+            print(f"Your current coordinates are {character['x-coordinate'], character['y-coordinate']}")
             time.sleep(2)
     # else:
     #     Tell the user they can't go in that direction
