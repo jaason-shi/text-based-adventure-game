@@ -76,6 +76,8 @@ def make_board(rows: int, columns: int) -> dict:
     return board_dict
 
 
+riddle_number = randint(0, 12)
+
 
 def make_riddle(character: dict, board: dict) -> str:
     get_riddles = open('riddles.json', 'r')
@@ -83,30 +85,43 @@ def make_riddle(character: dict, board: dict) -> str:
     current_character_coordinate = (character['x-coordinate'], character['y-coordinate'])
     current_room = board[current_character_coordinate]['room']
     if current_room == 'hallway':
-        return riddles['riddles_list'][randint(0, 12)]["riddles"]
+        return riddles['riddles_list'][riddle_number]["riddles"]
 
 
-
-# def check_for_challenge():
-#   if room != hallway:
-#       return True
-#   else:
-#       return False
-#
-#
-# there_is_a_challenge = check_for_challenge()
+def get_player_answer() -> str:
+    print("Please enter your answer here: ")
+    return input()
 
 
+def get_correct_answer() -> str:
+    correct_answer = riddles['riddles_list'][riddle_number]["answer"]
+    return correct_answer
 
 
-rows = 10
-columns = 10
-board = make_board(rows, columns)
-name = character_name()
-character = make_character(name)
+def check_player_answer(player_answer: str, correct_answer: str) -> None:
+    if player_answer == correct_answer:
+        print("Correct! You have gained # XP")
+    else:
+        print("Wrong answer")
 
-print(make_riddle(character, board))
+def game():
+    rows = 10
+    columns = 10
+    board = make_board(rows, columns)
+    name = character_name()
+    character = make_character(name)
+    print(make_riddle(character, board))
+    player_input = str(get_player_answer())
+    correct_riddle_answer = get_correct_answer()
+    check_player_answer(player_input, correct_riddle_answer)
 
+
+def main():
+    game()
+
+
+if __name__ == '__main__':
+    main()
 
 
 
