@@ -76,10 +76,23 @@ def move_character(character: dict, player_movement: int) -> None:
         character['x-coordinate'] += 1
 
 
+def make_riddle(character: dict, board: dict, riddle_number: int) -> str:
+    get_riddles = open('riddles.json', 'r')
+    riddles = json.load(get_riddles)
+    current_character_coordinate = (character['x-coordinate'], character['y-coordinate'])
+    current_room = board[current_character_coordinate]['room']
+    if current_room != 'hallway':
+        return riddles['riddles_list'][riddle_number]["riddles"]
+
+
+
+
+
 def game():  # called from main
     rows = 10
     columns = 10
     movements = ['Up', 'Down', 'Left', 'Right']
+    riddle_number = randint(0, 12)
     board = make_board(rows, columns)
     name = character_name()
     print(f"Welcome to our math game, {name}! We hope you enjoy and practice your math skills. :)")
@@ -116,6 +129,7 @@ def game():  # called from main
             describe_current_location(board, character)
     #         there_is_a_challenge = check_for_challenges()
     #         if there_is_a_challenge:
+    #         print(make_riddle(character, board, riddle_number))
     #             execute_challenge_protocol(character)
     #             if character_has_leveled():
     #                 execute_glow_up_protocol()
