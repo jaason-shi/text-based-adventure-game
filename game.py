@@ -85,7 +85,48 @@ def make_riddle(character: dict, board: dict, riddle_number: int) -> str:
         return riddles['riddles_list'][riddle_number]["riddles"]
 
 
+def get_player_answer() -> str:
+    print("Please enter your answer here: ")
+    return input()
 
+
+def get_correct_answer(riddle_number: int) -> str:
+    get_riddles = open('riddles.json', 'r')
+    riddles = json.load(get_riddles)
+    correct_answer = riddles['riddles_list'][riddle_number]["answer"]
+    return correct_answer
+
+
+def check_player_answer(player_answer: str, correct_answer: str) -> bool:
+    if player_answer == correct_answer:
+        return True
+    else:
+        return False
+
+
+def player_is_correct(character:dict):
+    print("Correct! You have gained 10 XP")
+    character['XP'] += 10
+    character['attempts'] -= 1
+    if character['XP'] == 10:
+        character["level"] += 1
+        character["attempts"] += 3
+    elif character['XP'] == 30:
+        character["level"] += 1
+        character["attempts"] += 3
+    elif character['XP'] == 60:
+        character["level"] += 1
+        character["attempts"] += 3
+
+
+def player_is_wrong(character:dict):
+    print("You got a 0 on the quiz.")
+    character['attempts'] -= 1
+
+
+def no_more_attempts(character:dict):
+    if character['attempts'] == 0:
+        print('You dropped out of the academy.')
 
 
 def game():  # called from main
