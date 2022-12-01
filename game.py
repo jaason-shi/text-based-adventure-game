@@ -170,6 +170,10 @@ def game():  # called from main
     #         there_is_a_challenge = check_for_challenges()
     #         if there_is_a_challenge:
             print(make_riddle(character, board, riddle_number))
+            player_answer = get_player_answer()
+            correct_answer = get_correct_answer(riddle_number)
+            check_player_answer(player_answer, correct_answer)
+
     #             execute_challenge_protocol(character)
     #             if character_has_leveled():
     #                 execute_glow_up_protocol()
