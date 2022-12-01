@@ -2,10 +2,57 @@ import json
 import io
 from random import randint
 
-get_riddles = open('riddles.json', 'r')
-riddles = json.load(get_riddles)
-# for riddle in riddles['riddles_list']:
-    # print(riddle)
+def make_riddle(character: dict, board: dict) -> str:
+    get_riddles = open('riddles.json', 'r')
+    riddles = json.load(get_riddles)
+    character_coordinate = (character['x-coordinate'], character['y-coordinate'])
+    character_location_on_board = board[character_coordinate]['room']
+    if character_location_on_board != 'hallway':
+        return
+    riddle = riddles['riddles_list']
+    get_riddles.close()
+    return riddle
+
+    #     (riddles['riddles_list'][randint(0, 12)])
+print(make_riddle())
+
+
+
+
+
+
+
+
+if character_has_leveled():
+    execute_glow_up_protocol()
+
+# boolean value if riddle has been completed
+
+if True:
+    xp + 10
+    attempts - 1
+    if character xp = 10:
+        character level + 1
+        attempts + 3
+    elif character xp = 20:
+        character level + 1
+        attempts + 3
+    elif character xp = 30:
+        character level + 1
+        attempts + 3
+else:
+    attempt - 1
+    continue() ?
+
+
+#   weeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+
+
+
+
+
+
+
 
 
 # def create_room():
@@ -23,8 +70,6 @@ riddles = json.load(get_riddles)
 # for room in rooms['rooms_list']:
 #     print(room)
 
-get_riddles.close()
-
 
 # def make_board(rows, columns):
 #     board = {}
@@ -39,35 +84,20 @@ get_riddles.close()
 #
 # print(make_board(10,10))
 
+# #
+# def make_board(rows: int, columns: int) -> dict:
+#     board_dict = {}
+#     get_rooms = open('rooms.json', 'r')
+#     rooms = json.load(get_rooms)
+#     hallway = {'room': 'hallway'}
+#     for row in range(rows):
+#         for column in range(columns):
+#             if row == randint(0, 9) or column == randint(0, 9):
+#                 board_dict[(row, column)] = rooms["rooms_list"][randint(0, 9)]
+#             else:
+#                 board_dict[(row, column)] = hallway
+#     return board_dict
 #
-def make_board(rows: int, columns: int) -> dict:
-    board_dict = {}
-    get_rooms = open('rooms.json', 'r')
-    rooms = json.load(get_rooms)
-    hallway = {'room': 'hallway'}
-    for row in range(rows):
-        for column in range(columns):
-            if row == randint(0, 9) or column == randint(0, 9):
-                board_dict[(row, column)] = rooms["rooms_list"][randint(0, 9)]
-            else:
-                board_dict[(row, column)] = hallway
-    return board_dict
-
-
-
-def make_riddle(character: dict) -> bool:
-    riddles_dict = {}
-    get_riddles = open('riddles.json', 'r')
-    riddles = json.load(get_riddles)
-    if (character['x-coordinate'], character['y-coordinate']) ==
-
-
-def check_for_challenge():
-  if room != hallway:
-      return True
-  else:
-      return False
-
-
-there_is_a_challenge = check_for_challenge()
-
+#
+# current_room = board[current_character_coordinate]['room']
+# there_is_a_challenge = check_for_challenge()
