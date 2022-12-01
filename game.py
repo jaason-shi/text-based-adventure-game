@@ -121,7 +121,6 @@ def game():  # called from main
     while not achieved_goal:
         # Tell the user where they are
         describe_current_location(board, character)
-        time.sleep(2)
         direction = get_user_choice(movements)
         valid_move = validate_move(rows, columns, character, direction)
         if valid_move:
@@ -129,7 +128,7 @@ def game():  # called from main
             describe_current_location(board, character)
     #         there_is_a_challenge = check_for_challenges()
     #         if there_is_a_challenge:
-    #         print(make_riddle(character, board, riddle_number))
+            print(make_riddle(character, board, riddle_number))
     #             execute_challenge_protocol(character)
     #             if character_has_leveled():
     #                 execute_glow_up_protocol()
