@@ -55,11 +55,11 @@ def get_user_choice(choices: list) -> int:
 def validate_move(width: int, height: int, character: dict, direction: int) -> bool:
     if direction == 1 and character['y-coordinate'] < 1:
         return False
-    if direction == 2 and character['y-coordinate'] == height:
+    if direction == 2 and character['y-coordinate'] == height - 1:
         return False
     if direction == 3 and character['x-coordinate'] < 1:
         return False
-    if direction == 4 and character['x-coordinate'] == width:
+    if direction == 4 and character['x-coordinate'] == width - 1:
         return False
     else:
         return True
