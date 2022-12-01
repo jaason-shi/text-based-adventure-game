@@ -48,6 +48,14 @@ riddles = json.load(get_riddles)
 get_riddles.close()
 
 
+def make_character(name: str) -> dict:
+    return {'name': name,
+            'level': 1,
+            'attempts': 3,
+            'XP': 0,
+            'x-coordinate': 9,
+            'y-coordinate': 1}
+
 # def make_board(rows, columns):
 #     board = {}
 #     for row in range(rows):
@@ -98,11 +106,30 @@ def get_correct_answer() -> str:
     return correct_answer
 
 
-def check_player_answer(player_answer: str, correct_answer: str) -> None:
+def check_player_answer(player_answer: str, correct_answer: str, character: dict) -> None:
     if player_answer == correct_answer:
-        print("Correct! You have gained # XP")
+        print("Correct! You have gained 10 XP")
+        character['XP'] += 10
+        character['attempts'] -= 1
+        if character['XP'] == 10:
+            character["level"] += 1
+            character["attempts"] += 3
+            return True
+        elif character['XP'] == 30:
+            character["level"] += 1
+            character["attempts"] += 3
+            return True
+        elif character['XP'] == 60:
+            character["level"] += 1
+            character["attempts"] += 3
+            return True
     else:
         print("Wrong answer")
+        character["attempts"] -= 1
+        return False
+
+
+
 
 def game():
     rows = 10
@@ -113,7 +140,8 @@ def game():
     print(make_riddle(character, board))
     player_input = str(get_player_answer())
     correct_riddle_answer = get_correct_answer()
-    check_player_answer(player_input, correct_riddle_answer)
+    check_player_answer(player_input, correct_riddle_answer, character)
+    print(character)
 
 
 def main():
