@@ -106,30 +106,45 @@ def get_correct_answer() -> str:
     return correct_answer
 
 
-def check_player_answer(player_answer: str, correct_answer: str, character: dict) -> None:
+def check_player_answer(player_answer: str, correct_answer: str, character: dict) -> bool:
     if player_answer == correct_answer:
-        print("Correct! You have gained 10 XP")
-        character['XP'] += 10
-        character['attempts'] -= 1
-        if character['XP'] == 10:
-            character["level"] += 1
-            character["attempts"] += 3
-            return True
-        elif character['XP'] == 30:
-            character["level"] += 1
-            character["attempts"] += 3
-            return True
-        elif character['XP'] == 60:
-            character["level"] += 1
-            character["attempts"] += 3
-            return True
+        return True
     else:
-        print("Wrong answer")
-        character["attempts"] -= 1
         return False
 
 
 
+def character_glow(check_player_answer):
+    #     print("Correct! You have gained 10 XP")
+    #     character['XP'] += 10
+    #     character['attempts'] -= 1
+    #     if character['XP'] == 10:
+    #         character["level"] += 1
+    #         character["attempts"] += 3
+    #     elif character['XP'] == 30:
+    #         character["level"] += 1
+    #         character["attempts"] += 3
+    #     elif character['XP'] == 60:
+    #         character["level"] += 1
+    #         character["attempts"] += 3
+    # else:
+    #     print("Wrong answer")
+    #     return False
+    #
+    # while check_answer is False:
+    #     character['attempts'] -= 1
+    #     if character['attempts'] == 0:
+    #         print('youre dead')
+
+
+# make two functions: one for true with level up; one for false with while loop
+#  while player_answer is not correct_answer, character attempt -1, etc
+                if player answer is correct answer
+                        do the level up stuff
+                        break loop
+                if player answer is not correct answer
+                        keep running the loop
+                        until attempts = 0
 
 def game():
     rows = 10
@@ -140,7 +155,11 @@ def game():
     print(make_riddle(character, board))
     player_input = str(get_player_answer())
     correct_riddle_answer = get_correct_answer()
-    check_player_answer(player_input, correct_riddle_answer, character)
+    check_answer = check_player_answer(player_input, correct_riddle_answer, character)
+    while check_answer is False:
+        character['attempts'] -= 1
+        if character['attempts'] == 0:
+            print(check_answer)
     print(character)
 
 
