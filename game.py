@@ -195,7 +195,7 @@ def player_is_wrong(character: dict) -> None:
 def no_more_attempts(character: dict) -> bool:
     if character['Attempts'] == 0:
         print('You dropped out of the academy. :( Please reapply next year...')
-    return True
+        return True
 
 
 def check_if_goal_attained(character: dict) -> bool:
@@ -245,8 +245,6 @@ def game():  # called from main
             # print(describe_current_location(board, character))
             print_board(board, rows, columns, character)
 
-    #         there_is_a_challenge = check_for_challenges()
-    #         if there_is_a_challenge:
             print(character)
 
             there_is_a_room = check_for_room(character, board)
@@ -260,9 +258,9 @@ def game():  # called from main
                     print(character)
                 else:
                     player_is_wrong(character)
-                    # zero_attempts_left = no_more_attempts(character)
-                    # if zero_attempts_left:
-                    #     achieved_goal = True
+
+            if no_more_attempts(character):
+                achieved_goal = True
 
             # if character level == 3
             if check_if_goal_attained(character):
@@ -282,8 +280,6 @@ def game():  # called from main
             print("Ah! You can't go there. Please try again...")
             print(f"Your current coordinates are {character['x-coordinate'], character['y-coordinate']}")
             time.sleep(2)
-
-# Print end of game stuff like congratulations or sorry you died
 
 
 def main():
