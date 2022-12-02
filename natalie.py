@@ -18,13 +18,13 @@ def make_board(rows, columns):
             board_dict[(row, column)] = 'hallway'
 
     for row in range(1, rows):
-        board_dict[row, 1] = 'test_room_1'
+        board_dict[row, 1] = rooms["rooms_list"][randint(0, 9)]['room']
         if row <= 8:
-            board_dict[1, row] = 'test_room_2'
+            board_dict[1, row] = rooms["rooms_list"][randint(0, 9)]['room']
         if row > 3:
-            board_dict[4, row] = 'test_room_3'
+            board_dict[4, row] = rooms["rooms_list"][randint(0, 9)]['room']
         if row > 8:
-            board_dict[4, row] = 'test_room_4'
+            board_dict[4, row] = rooms["rooms_list"][randint(0, 9)]['room']
     return board_dict
 
 
