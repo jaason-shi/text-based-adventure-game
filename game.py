@@ -104,7 +104,7 @@ def check_player_answer(player_answer: str, correct_answer: str) -> bool:
         return False
 
 
-def player_is_correct(character:dict):
+def player_is_correct(character: dict):
     print("Correct! You have gained 10 XP")
     character['XP'] += 10
     character['attempts'] -= 1
@@ -119,14 +119,20 @@ def player_is_correct(character:dict):
         character["attempts"] += 3
 
 
-def player_is_wrong(character:dict):
+def player_is_wrong(character: dict):
     print("You got a 0 on the quiz.")
     character['attempts'] -= 1
 
 
-def no_more_attempts(character:dict):
+def no_more_attempts(character: dict):
     if character['attempts'] == 0:
         print('You dropped out of the academy.')
+
+
+def check_if_goal_attained(character: dict):
+    if character['level'] == 3:
+        print('Congratulations! You have graduated from the academy!')
+        return True
 
 
 def game():  # called from main
@@ -150,7 +156,8 @@ def game():  # called from main
     | [] .-.-. [] |                                (((())
   ..|____|_|_|____|..................................)(... 
     """)
-    print("You have entered the math academy! We hope you enjoy your time as a student. Be ready to put your thinking cap on!")
+    print("You have entered the math academy! We hope you enjoy your time as a student. "
+          "Be ready to put your thinking cap on!")
     time.sleep(2)
     print("You are now walking inside...")
     time.sleep(1)
@@ -176,7 +183,7 @@ def game():  # called from main
                 player_is_correct(character)
             else:
                 player_is_wrong(character)
-    #     achieved_goal = check_if_goal_attained(board, character)
+            achieved_goal = check_if_goal_attained(character)
         else:
             print("Ah! You can't go there. Please try again...")
             print(f"Your current coordinates are {character['x-coordinate'], character['y-coordinate']}")
