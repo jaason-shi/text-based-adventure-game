@@ -27,9 +27,9 @@ def character_name() -> str:
 
 
 def make_character(name: str) -> dict:
-    return {'name': name,
-            'level': 1,
-            'attempts': 3,
+    return {'Name': name,
+            'Grade': 1,
+            'Attempts': 3,
             'XP': 0,
             'x-coordinate': 9,
             'y-coordinate': 1}
@@ -113,30 +113,29 @@ def check_player_answer(player_answer: str, correct_answer: str) -> bool:
 def player_is_correct(character: dict):
     print("Correct! You have gained 10 XP")
     character['XP'] += 10
-    character['attempts'] -= 1
+    character['Attempts'] -= 1
     if character['XP'] == 10:
-        character["level"] += 1
-        character["attempts"] += 3
+        character["Grade"] += 1
+        character["Attempts"] += 3
+        print('You made it to Grade 2!')
     elif character['XP'] == 30:
-        character["level"] += 1
-        character["attempts"] += 3
-    elif character['XP'] == 60:
-        character["level"] += 1
-        character["attempts"] += 3
+        character["Grade"] += 1
+        character["Attempts"] += 3
+        print('You made it to Grade 3!')
 
 
 def player_is_wrong(character: dict):
     print("You got a 0 on the quiz.")
-    character['attempts'] -= 1
+    character['Attempts'] -= 1
 
 
 def no_more_attempts(character: dict):
-    if character['attempts'] == 0:
+    if character['Attempts'] == 0:
         print('You dropped out of the academy.')
 
 
 def check_if_goal_attained(character: dict):
-    if character['level'] == 3:
+    if character['Grade'] == 3:
         print('Congratulations! You have graduated from the academy!')
         return True
 
