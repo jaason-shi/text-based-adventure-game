@@ -181,6 +181,7 @@ def game():  # called from main
             print(describe_current_location(board, character))
     #         there_is_a_challenge = check_for_challenges()
     #         if there_is_a_challenge:
+            print(character)
             there_is_a_room = check_for_room(character, board)
             if there_is_a_room:
                 riddle_number = randint(0, 12)
@@ -189,9 +190,11 @@ def game():  # called from main
                 correct_answer = get_correct_answer(riddle_number)
                 if check_player_answer(player_answer, correct_answer):
                     player_is_correct(character)
+                    print(character)
                 else:
                     player_is_wrong(character)
             achieved_goal = check_if_goal_attained(character)
+            print(character)
         else:
             print("Ah! You can't go there. Please try again...")
             print(f"Your current coordinates are {character['x-coordinate'], character['y-coordinate']}")
