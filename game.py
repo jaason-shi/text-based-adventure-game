@@ -21,7 +21,6 @@ def make_board(rows: int, columns: int) -> dict:
     return board_dict
 
 
-
 def character_name() -> str:
     print("Please enter a name for your character: ")
     return input()
@@ -111,26 +110,26 @@ def check_player_answer(player_answer: str, correct_answer: str) -> bool:
         return False
 
 
-def make_final_riddle():
+def make_final_riddle() -> str:
     final_riddle = 'Seven boys met each other at a party. ' \
                    'Each of them shook hands only once with each of the other boys. ' \
                    'What is the total number of handshakes that took place?'
     return final_riddle
 
 
-def get_player_final_answer():
+def get_player_final_answer() -> str:
     print("Please enter your final answer here: ")
     return input()
 
 
-def check_player_final_answer(final_player_answer):
+def check_player_final_answer(final_player_answer: str) -> bool:
     if final_player_answer == '21':
         return True
     else:
         return False
 
 
-def player_is_correct(character: dict):
+def player_is_correct(character: dict) -> None:
     print("Correct! You have gained 10 XP")
     character['XP'] += 10
     character['Attempts'] -= 1
@@ -144,19 +143,19 @@ def player_is_correct(character: dict):
         print('You made it to Grade 3! It is time for the final exam... be prepared!')
 
 
-def player_is_wrong(character: dict):
+def player_is_wrong(character: dict) -> None:
     print("Oh no, that is not correct. You have some reviewing to do.")
     character['Attempts'] -= 1
     print(character)
 
 
-def no_more_attempts(character: dict):
+def no_more_attempts(character: dict) -> bool:
     if character['Attempts'] == 0:
         print('You dropped out of the academy. :( Please reapply next year...')
     return True
 
 
-def check_if_goal_attained(character: dict):
+def check_if_goal_attained(character: dict) -> bool:
     if character['Grade'] == 3:
         return True
 
