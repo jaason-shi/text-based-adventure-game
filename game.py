@@ -111,7 +111,9 @@ def check_player_answer(player_answer: str, correct_answer: str) -> bool:
 
 
 def make_final_riddle():
-    final_riddle = 'What is 2 + 2 = ?'
+    final_riddle = 'Seven boys met each other at a party. ' \
+                   'Each of them shook hands only once with each of the other boys. ' \
+                   'What is the total number of handshakes that took place?'
     return final_riddle
 
 
@@ -121,7 +123,7 @@ def get_player_final_answer():
 
 
 def check_player_final_answer(final_player_answer):
-    if final_player_answer == '4':
+    if final_player_answer == '21':
         return True
     else:
         return False
@@ -138,17 +140,17 @@ def player_is_correct(character: dict):
     elif character['XP'] == 30:
         character["Grade"] += 1
         character["Attempts"] += 3
-        print('You made it to Grade 3!')
+        print('You made it to Grade 3! It is time for the final exam... be prepared!')
 
 
 def player_is_wrong(character: dict):
-    print("You got a 0 on the quiz.")
+    print("You have some reviewing to do.")
     character['Attempts'] -= 1
 
 
 def no_more_attempts(character: dict):
     if character['Attempts'] == 0:
-        print('You dropped out of the academy.')
+        print('You dropped out of the academy. Please reapply next year...')
 
 
 def check_if_goal_attained(character: dict):
@@ -161,8 +163,8 @@ def game():  # called from main
     columns = 10
     movements = ['Up', 'Down', 'Left', 'Right']
     board = make_board(rows, columns)
-    name = character_name()
-    print(f"Welcome to our math game, {name}! We hope you enjoy and practice your math skills. :)")
+    name = character_name().title()
+    print(f"Welcome to the math academy, {name}! We hope to see you graduate with flying colours! :)")
     time.sleep(1)
     print("Loading...")
     time.sleep(1)
@@ -176,8 +178,8 @@ def game():  # called from main
     | [] .-.-. [] |                                (((())
   ..|____|_|_|____|..................................)(... 
     """)
-    print("You have entered the math academy! We hope you enjoy your time as a student. "
-          "Be ready to put your thinking cap on!")
+    print("You have entered the math academy! Walk around to explore the school grounds. "
+          "There may be a POP QUIZ in some of the rooms so be ready to put your thinking cap on!")
     time.sleep(1)
     print("You are now walking inside...")
     time.sleep(1)
