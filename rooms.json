@@ -2,19 +2,19 @@
   "rooms_list":
   [
     {
-      "room": "cafeteria"
+      "room": "computer room"
     },
     {
-      "room": "schoolyard"
+      "room": "gymnasium"
     },
     {
-      "room": "music room"
+      "room": "math room"
     },
     {
       "room": "art room"
     },
     {
-      "room": "computer room"
+      "room": "music room"
     },
     {
       "room": "library"
@@ -23,13 +23,13 @@
       "room": "playground"
     },
     {
-      "room": "math room"
+      "room": "science room"
     },
     {
-      "room": "lecture hall"
+      "room": "cafeteria"
     },
     {
-      "room": "gymnasium"
+      "room": "school yard"
     }
   ]
 }
