@@ -20,11 +20,11 @@ def make_board(rows, columns):
     for row in range(1, rows):
         board_dict[row, 1] = rooms["rooms_list"][randint(0, 9)]['room']
         if row <= 8:
-            board_dict[1, row] = rooms["rooms_list"][randint(0, 9)]['room']
+            board_dict[randint(0, 9), row] = rooms["rooms_list"][randint(0, 9)]['room']
         if row > 3:
-            board_dict[4, row] = rooms["rooms_list"][randint(0, 9)]['room']
+            board_dict[randint(0, 9), row] = rooms["rooms_list"][randint(0, 9)]['room']
         if row > 8:
-            board_dict[4, row] = rooms["rooms_list"][randint(0, 9)]['room']
+            board_dict[randint(0, 9), row] = rooms["rooms_list"][randint(0, 9)]['room']
     return board_dict
 
 
