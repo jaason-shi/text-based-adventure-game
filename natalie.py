@@ -29,16 +29,21 @@ def make_board(rows, columns):
     return board_dict
 
 
-def print_board(board, rows, columns):
+def print_board(board, rows, columns, character):
+    character_location = (character['x-coordinate'], character['y-coordinate'])
     for row in range(rows):
         for column in range(columns):
+            if (row, column) == character_location:
+                print("🎄")
             current_location = board[(row, column)]
             if current_location == 'hallway':
-                print(":smile:")
-            print(board[(row, column)], end=' ')
+                print("😃", end='')
+            else:
+                print(board[(row, column)], end=' ')
         print()
 
-print_board(make_board(10, 10), 10, 10)
+
+print_board(make_board(10, 10), 10, 10, character)
 
 
 
