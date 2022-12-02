@@ -7,18 +7,39 @@ import json
 from random import randint
 
 
-def make_board(rows: int, columns: int) -> dict:
-    board_dict = {}
+def make_board(rows, columns):
     get_rooms = open('rooms.json', 'r')
     rooms = json.load(get_rooms)
-    hallway = {'room': 'hallway'}
+
+    board_dict = {}
+
     for row in range(rows):
         for column in range(columns):
-            if row == randint(0, 9) or column == randint(0, 9):
-                board_dict[(row, column)] = rooms["rooms_list"][randint(0, 9)]
-            else:
-                board_dict[(row, column)] = hallway
+            board_dict[(row, column)] = 'hallway'
+
+    for row in range(1, rows):
+        board_dict[row, 1] = rooms["rooms_list"][randint(0, 9)]['room']
+        if row <= 8:
+            board_dict[randint(0, 9), row] = rooms["rooms_list"][randint(0, 9)]['room']
+        if row > 3:
+            board_dict[randint(0, 9), row] = rooms["rooms_list"][randint(0, 9)]['room']
+        if row > 8:
+            board_dict[randint(0, 9), row] = rooms["rooms_list"][randint(0, 9)]['room']
     return board_dict
+
+
+def print_board(board, rows, columns, character):
+    character_location = (character['x-coordinate'], character['y-coordinate'])
+    for row in range(rows):
+        for column in range(columns):
+            current_location = board[(row, column)]
+            if (row, column) == character_location:
+                print("🧍", end='')
+            elif current_location == 'hallway':
+                print("🏫", end='')
+            elif current_location != 'hallway':
+                print("📚", end='')
+        print()
 
 
 def character_name() -> str:
@@ -213,13 +234,15 @@ def game():  # called from main
     achieved_goal = False
     while not achieved_goal:
         # Tell the user where they are
-        print(describe_current_location(board, character))
+        # print(describe_current_location(board, character))
+        print_board(board, rows, columns, character)
         direction = get_user_choice(movements)
         valid_move = validate_move(rows, columns, character, direction)
 
         if valid_move:
             move_character(character, direction)
-            print(describe_current_location(board, character))
+            # print(describe_current_location(board, character))
+            print_board(board, rows, columns, character)
 
     #         there_is_a_challenge = check_for_challenges()
     #         if there_is_a_challenge:

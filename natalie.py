@@ -5,6 +5,9 @@ import json
 
 import json
 from random import randint
+from game import make_character
+
+test_character = make_character('test')
 
 
 def make_board(rows, columns):
@@ -16,7 +19,6 @@ def make_board(rows, columns):
     for row in range(rows):
         for column in range(columns):
             board_dict[(row, column)] = 'hallway'
-        print(board_dict)
 
     for row in range(1, rows):
         board_dict[row, 1] = rooms["rooms_list"][randint(0, 9)]['room']
@@ -33,17 +35,17 @@ def print_board(board, rows, columns, character):
     character_location = (character['x-coordinate'], character['y-coordinate'])
     for row in range(rows):
         for column in range(columns):
-            if (row, column) == character_location:
-                print("🎄")
             current_location = board[(row, column)]
-            if current_location == 'hallway':
-                print("😃", end='')
-            else:
-                print(board[(row, column)], end=' ')
+            if (row, column) == character_location:
+                print("🧍", end='')
+            elif current_location == 'hallway':
+                print("🏫", end='')
+            elif current_location != 'hallway':
+                print("📚", end='')
         print()
 
 
-print_board(make_board(10, 10), 10, 10, character)
+print_board(make_board(10, 10), 10, 10, test_character)
 
 
 
