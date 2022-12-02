@@ -4,17 +4,17 @@
     {
       "riddles": "There are several books on a bookshelf. If one book is the 4th from the left and 6th from the right, how many books are on the shelf?",
       "answer": "9",
-      "category": "easy"
+      "category": "medium"
     },
     {
-      "riddles": "A duck was given $9, a spider was given $36, and a bee was given $27. How much money would be give to a cat?",
-      "answer": "$18",
-      "category": "medium"
+      "riddles": "There are 6 black socks, 8 brown socks, 4 blue socks, and 2 red socks in my sock drawer. Can you figure out the minimum number of socks to be pulled out in order to get a matching pair for sure?",
+      "answer": "5",
+      "category": "hard"
     },
     {
       "riddles": "I am a three-digit number. My tens digit is six more than my ones digit. My hundreds digit is eight less than my tens digit. What number am I?",
       "answer": "193",
-      "category": "easy"
+      "category": "medium"
     },
     {
       "riddles": "What occurs twice a WEEK, once a YEAR, but never in a DAY?",
@@ -22,14 +22,14 @@
       "category": "easy"
     },
     {
-      "riddles": "Jason is 54 years old and his mother is 80, how many years ago was Jason's mother three times her age?",
+      "riddles": "Janice is 54 years old and his mother is 80, how many years ago was Janice's mother three times her age?",
       "answer": "41",
       "category": "medium"
     },
     {
       "riddles": "What number do you get when you multiply all of the numbers on a telephone's number pad?",
       "answer": "0",
-      "category": "medium"
+      "category": "easy"
     },
     {
       "riddles": "A grandfather, two fathers, and two sons went to the movie theater together and everyone bought one movie ticket each. How many tickets did they buy in total?",
@@ -49,7 +49,7 @@
     {
       "riddles": "Two people in front of two people, two people behind two people, and two people beside two people. How many people are there?",
       "answer": "4",
-      "category": "medium"
+      "category": "easy"
     },
     {
       "riddles": "An airplane flies against the wind from A to B in 8 hours. The same airplane returns from B to A in the same direction as the wind, in 7 hours. Find the ratio of the speed of the airplane to the speed of the wind.",
@@ -59,12 +59,12 @@
     {
       "riddles": "There are twelve kids in a classroom. Six kids are wearing socks and 4 are wearing shoes. Three kids are wearing both. How many kids are bare feet?",
       "answer": "5",
-      "category": "hard"
+      "category": "medium"
     },
     {
       "riddles": "The product of two consecutive negative even integers is 24. What is the smaller of the two numbers?",
       "answer": "-6",
-      "category": "hard"
+      "category": "easy"
     }
   ]
 }
