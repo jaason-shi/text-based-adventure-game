@@ -22,6 +22,11 @@ def make_board(rows: int, columns: int) -> dict:
 
 
 def character_name() -> str:
+    """
+    Return user input.
+
+    :return:
+    """
     print("Please enter a name for your character: ")
     return input()
 
