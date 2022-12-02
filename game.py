@@ -19,13 +19,13 @@ def make_board(rows, columns):
 
     for row in range(1, rows):
         if row >= 3:
-            board_dict[randint(0, 9), row] = rooms["rooms_list"][randint(0, 9)]['room']
+            board_dict[row, randint(0, 9)] = rooms["rooms_list"][randint(0, 9)]['room']
         if row <= 8:
-            board_dict[randint(0, 9), row] = rooms["rooms_list"][randint(0, 9)]['room']
+            board_dict[row, randint(0, 9)] = rooms["rooms_list"][randint(0, 9)]['room']
         if row > 3:
-            board_dict[randint(0, 9), row] = rooms["rooms_list"][randint(0, 9)]['room']
+            board_dict[row, randint(0, 9)] = rooms["rooms_list"][randint(0, 9)]['room']
         if row > 8:
-            board_dict[randint(0, 9), row] = rooms["rooms_list"][randint(0, 9)]['room']
+            board_dict[row, randint(0, 9)] = rooms["rooms_list"][randint(0, 9)]['room']
     return board_dict
 
 
@@ -66,12 +66,12 @@ def make_character(name: str) -> dict:
             'Grade': 1,
             'Attempts': 3,
             'XP': 0,
-            'x-coordinate': 9,
-            'y-coordinate': 1}
+            'x-coordinate': 5,
+            'y-coordinate': 5}
 
 
 def describe_current_location(board: dict, character: dict) -> str:
-    character_coordinate = character['x-coordinate'], character['y-coordinate']
+    character_coordinate = (character['x-coordinate'], character['y-coordinate'])
     character_location_on_board = board[character_coordinate]['room']
     return f"Your current location is: {character_location_on_board}"
 
