@@ -21,6 +21,7 @@ def make_board(rows: int, columns: int) -> dict:
     return board_dict
 
 
+
 def character_name() -> str:
     print("Please enter a name for your character: ")
     return input()
@@ -144,13 +145,15 @@ def player_is_correct(character: dict):
 
 
 def player_is_wrong(character: dict):
-    print("You have some reviewing to do.")
+    print("Oh no, that is not correct. You have some reviewing to do.")
     character['Attempts'] -= 1
+    print(character)
 
 
 def no_more_attempts(character: dict):
     if character['Attempts'] == 0:
-        print('You dropped out of the academy. Please reapply next year...')
+        print('You dropped out of the academy. :( Please reapply next year...')
+    return True
 
 
 def check_if_goal_attained(character: dict):
@@ -193,12 +196,15 @@ def game():  # called from main
         print(describe_current_location(board, character))
         direction = get_user_choice(movements)
         valid_move = validate_move(rows, columns, character, direction)
+
         if valid_move:
             move_character(character, direction)
             print(describe_current_location(board, character))
+
     #         there_is_a_challenge = check_for_challenges()
     #         if there_is_a_challenge:
             print(character)
+
             there_is_a_room = check_for_room(character, board)
             if there_is_a_room:
                 riddle_number = randint(0, 12)
@@ -210,11 +216,17 @@ def game():  # called from main
                     print(character)
                 else:
                     player_is_wrong(character)
+                    # zero_attempts_left = no_more_attempts(character)
+                    # if zero_attempts_left:
+                    #     achieved_goal = True
+
+
             # if character level == 3
             if check_if_goal_attained(character):
                 print(make_final_riddle())
                 final_player_answer = get_player_final_answer()
                 correct_player_final_answer = check_player_final_answer(final_player_answer)
+
                 if correct_player_final_answer:
                     achieved_goal = True
                     print("Congratulations! You have graduated from the academy.")
@@ -222,13 +234,12 @@ def game():  # called from main
                     character['Grade'] -= 1
                     print("Oh no, you need to go review Grade 2 again...")
                     print(f"Here are your character stats: {character}")
-            print(character)
+
         else:
             print("Ah! You can't go there. Please try again...")
             print(f"Your current coordinates are {character['x-coordinate'], character['y-coordinate']}")
             time.sleep(2)
-    # else:
-    #     Tell the user they can't go in that direction
+
 # Print end of game stuff like congratulations or sorry you died
 
 
