@@ -1,4 +1,5 @@
-# COMP 1510 202230
+# COMP 1510 202230 
+## Assignment 4 (Make Chris a game!)
 
 Every program needs a README.md
 
