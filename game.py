@@ -145,7 +145,6 @@ def game():  # called from main
     rows = 10
     columns = 10
     movements = ['Up', 'Down', 'Left', 'Right']
-    riddle_number = randint(0, 12)
     board = make_board(rows, columns)
     name = character_name()
     print(f"Welcome to our math game, {name}! We hope you enjoy and practice your math skills. :)")
@@ -184,6 +183,7 @@ def game():  # called from main
     #         if there_is_a_challenge:
             there_is_a_room = check_for_room(character, board)
             if there_is_a_room:
+                riddle_number = randint(0, 12)
                 print(make_riddle(riddle_number))
                 player_answer = get_player_answer()
                 correct_answer = get_correct_answer(riddle_number)
