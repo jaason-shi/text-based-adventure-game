@@ -163,9 +163,9 @@ def game():  # called from main
     board = make_board(rows, columns)
     name = character_name()
     print(f"Welcome to our math game, {name}! We hope you enjoy and practice your math skills. :)")
-    time.sleep(2)
+    time.sleep(1)
     print("Loading...")
-    time.sleep(2)
+    time.sleep(1)
     print("""
     \_/
   --(_)--  .
@@ -178,13 +178,13 @@ def game():  # called from main
     """)
     print("You have entered the math academy! We hope you enjoy your time as a student. "
           "Be ready to put your thinking cap on!")
-    time.sleep(2)
+    time.sleep(1)
     print("You are now walking inside...")
     time.sleep(1)
     character = make_character(name)
-    time.sleep(2)
+    time.sleep(1)
     print(f"Here are your character stats: {character}")
-    time.sleep(2)
+    time.sleep(1)
     achieved_goal = False
     while not achieved_goal:
         # Tell the user where they are
@@ -214,9 +214,12 @@ def game():  # called from main
                 final_player_answer = get_player_final_answer()
                 correct_player_final_answer = check_player_final_answer(final_player_answer)
                 if correct_player_final_answer:
+                    achieved_goal = True
                     print("Congratulations! You have graduated from the academy.")
                 else:
                     character['Grade'] -= 1
+                    print("Oh no, you need to go review Grade 2 again...")
+                    print(f"Here are your character stats: {character}")
             print(character)
         else:
             print("Ah! You can't go there. Please try again...")
