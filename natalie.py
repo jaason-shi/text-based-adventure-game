@@ -16,6 +16,7 @@ def make_board(rows, columns):
     for row in range(rows):
         for column in range(columns):
             board_dict[(row, column)] = 'hallway'
+        print(board_dict)
 
     for row in range(1, rows):
         board_dict[row, 1] = rooms["rooms_list"][randint(0, 9)]['room']
@@ -28,7 +29,16 @@ def make_board(rows, columns):
     return board_dict
 
 
-print(make_board(10, 10))
+def print_board(board, rows, columns):
+    for row in range(rows):
+        for column in range(columns):
+            current_location = board[(row, column)]
+            if current_location == 'hallway':
+                print(":smile:")
+            print(board[(row, column)], end=' ')
+        print()
+
+print_board(make_board(10, 10), 10, 10)
 
 
 
