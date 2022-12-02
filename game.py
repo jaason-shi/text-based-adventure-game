@@ -212,7 +212,7 @@ def game():  # called from main
     print(f"Welcome to the math academy, {name}! We hope to see you graduate with flying colours! :)")
     time.sleep(1)
     print("Loading...")
-    time.sleep(1)
+    time.sleep(1.5)
     print("""
     \_/
   --(_)--  .
@@ -237,13 +237,13 @@ def game():  # called from main
         # Tell the user where they are
         # print(describe_current_location(board, character))
         print_board(board, rows, columns, character)
+        time.sleep(2)
         direction = get_user_choice(movements)
         valid_move = validate_move(rows, columns, character, direction)
 
         if valid_move:
             move_character(character, direction)
             # print(describe_current_location(board, character))
-            print_board(board, rows, columns, character)
 
             print(character)
 
