@@ -153,7 +153,6 @@ def no_more_attempts(character: dict):
 
 def check_if_goal_attained(character: dict):
     if character['Grade'] == 3:
-        print('Congratulations! You have graduated from the academy!')
         return True
 
 
@@ -206,15 +205,18 @@ def game():  # called from main
                 correct_answer = get_correct_answer(riddle_number)
                 if check_player_answer(player_answer, correct_answer):
                     player_is_correct(character)
-
-                    final_riddle = make_final_riddle()
-                    final_player_answer = get_player_final_answer()
-                    correct_player_final_answer = check_player_final_answer(final_player_answer)
-
                     print(character)
                 else:
                     player_is_wrong(character)
-            achieved_goal = check_if_goal_attained(character)
+            # if character level == 3
+            if check_if_goal_attained(character):
+                print(make_final_riddle())
+                final_player_answer = get_player_final_answer()
+                correct_player_final_answer = check_player_final_answer(final_player_answer)
+                if correct_player_final_answer:
+                    print("Congratulations! You have graduated from the academy.")
+                else:
+                    character['Grade'] -= 1
             print(character)
         else:
             print("Ah! You can't go there. Please try again...")
