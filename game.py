@@ -25,13 +25,21 @@ def character_name() -> str:
     """
     Return user input.
 
-    :return:
+    :return: the user input as a string
     """
     print("Please enter a name for your character: ")
     return input()
 
 
 def make_character(name: str) -> dict:
+    """
+    Return a dictionary representing the character information.
+
+    :param name: a string
+    :precondition: name must be a string
+    :postcondition: creates a dictionary with the player's name and their character stats
+    :return: a dictionary with the character stats
+    """
     return {'Name': name,
             'Grade': 1,
             'Attempts': 3,
@@ -47,6 +55,14 @@ def describe_current_location(board: dict, character: dict) -> str:
 
 
 def get_user_choice(choices: list) -> int:
+    """
+    Return the player's inputted choice.
+
+    :param choices: a list
+    :precondition: choices must be a list of possible options for a player to choose from
+    :postcondition: correctly returns an integer that is the player's choice
+    :return: an integer representing the player's chosen option
+    """
     print("Where would you like to go?")
     for number, choice in enumerate(choices, 1):
         print(number, choice)
