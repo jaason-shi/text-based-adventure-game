@@ -31,15 +31,15 @@ def make_board(rows, columns):
 
 def print_board(board, rows, columns, character):
     character_location = (character['x-coordinate'], character['y-coordinate'])
-    for row in range(rows):
-        for column in range(columns):
+    for column in range(columns):
+        for row in range(rows):
             current_location = board[(row, column)]
             if (row, column) == character_location:
-                print("🧍", end='')
+                print("👹", end='')
             elif current_location == 'hallway':
                 print("🏫", end='')
             elif current_location != 'hallway':
-                print("📚", end='')
+                print("📘", end='')
         print()
 
 
