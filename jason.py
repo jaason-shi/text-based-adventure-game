@@ -2,6 +2,11 @@ import json
 import io
 from random import randint
 
+check player attempts
+return true ->
+false quit()
+sys.exit
+
 
 def make_board(rows: int, columns: int):
     board_dict = {}
