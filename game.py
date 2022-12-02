@@ -18,7 +18,8 @@ def make_board(rows, columns):
             board_dict[(row, column)] = 'hallway'
 
     for row in range(1, rows):
-        board_dict[row, 1] = rooms["rooms_list"][randint(0, 9)]['room']
+        if row >= 3:
+            board_dict[randint(0, 9), row] = rooms["rooms_list"][randint(0, 9)]['room']
         if row <= 8:
             board_dict[randint(0, 9), row] = rooms["rooms_list"][randint(0, 9)]['room']
         if row > 3:
@@ -262,7 +263,6 @@ def game():  # called from main
                     # zero_attempts_left = no_more_attempts(character)
                     # if zero_attempts_left:
                     #     achieved_goal = True
-
 
             # if character level == 3
             if check_if_goal_attained(character):
