@@ -2,8 +2,8 @@
   "riddles_list":
   [
     {
-      "riddles": "Using only addition, add eight 8's to get the number 1000",
-      "answer": "888 + 88 + 8 + 8 + 8",
+      "riddles": "There are several books on a bookshelf. If one book is the 4th from the left and 6th from the right, how many books are on the shelf?",
+      "answer": "9",
       "category": "easy"
     },
     {
@@ -37,8 +37,8 @@
       "category": "easy"
     },
     {
-      "riddles": "Natalie went to the store and bought a shirt for $88. It had been discounted by 22%. What is the original price of the shirt?",
-      "answer": "$110",
+      "riddles": "Amy is four times as old as me. In 20 years, I shall be twice as old as her. How old am I now?",
+      "answer": "40",
       "category": "easy"
     },
     {
@@ -47,8 +47,8 @@
       "category": "medium"
     },
     {
-      "riddles": "If the cost of a bat and a baseball combined is $1.10 and the bat costs $1.00 more than the ball, how much is the ball?",
-      "answer": "$0.05",
+      "riddles": "Two people in front of two people, two people behind two people, and two people beside two people. How many people are there?",
+      "answer": "4",
       "category": "medium"
     },
     {
@@ -57,8 +57,8 @@
       "category": "hard"
     },
     {
-      "riddles": "An airplane flies against the wind from A to B in 8 hours. The same airplane returns from B to A in the same direction as the wind, in 7 hours. Find the ratio of the speed of the airplane to the speed of the wind.",
-      "answer": "15",
+      "riddles": "There are twelve kids in a classroom. Six kids are wearing socks and 4 are wearing shoes. Three kids are wearing both. How many kids are bare feet?",
+      "answer": "5",
       "category": "hard"
     },
     {
