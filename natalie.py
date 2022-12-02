@@ -93,7 +93,7 @@ def make_riddle(character: dict, board: dict) -> str:
     current_character_coordinate = (character['x-coordinate'], character['y-coordinate'])
     current_room = board[current_character_coordinate]['room']
     if current_room == 'hallway':
-        return riddles['riddles_list'][riddle_number]["riddles"]
+        return riddles['riddles_list'   ][riddle_number]["riddles"]
 
 
 def get_player_answer() -> str:
@@ -106,7 +106,7 @@ def get_correct_answer() -> str:
     return correct_answer
 
 
-def check_player_answer(player_answer: str, correct_answer: str, character: dict) -> bool:
+def check_player_answer(player_answer: str, correct_answer: str) -> bool:
     if player_answer == correct_answer:
         return True
     else:
@@ -114,31 +114,35 @@ def check_player_answer(player_answer: str, correct_answer: str, character: dict
 
 
 
-def character_glow(check_player_answer):
-    #     print("Correct! You have gained 10 XP")
-    #     character['XP'] += 10
-    #     character['attempts'] -= 1
-    #     if character['XP'] == 10:
-    #         character["level"] += 1
-    #         character["attempts"] += 3
-    #     elif character['XP'] == 30:
-    #         character["level"] += 1
-    #         character["attempts"] += 3
-    #     elif character['XP'] == 60:
-    #         character["level"] += 1
-    #         character["attempts"] += 3
-    # else:
-    #     print("Wrong answer")
-    #     return False
-    #
-    # while check_answer is False:
-    #     character['attempts'] -= 1
-    #     if character['attempts'] == 0:
-    #         print('youre dead')
+def player_is_correct(character:dict):
+    print("Correct! You have gained 10 XP")
+    character['XP'] += 10
+    character['attempts'] -= 1
+    if character['XP'] == 10:
+        character["level"] += 1
+        character["attempts"] += 3
+    elif character['XP'] == 30:
+        character["level"] += 1
+        character["attempts"] += 3
+    elif character['XP'] == 60:
+        character["level"] += 1
+        character["attempts"] += 3
 
 
-# make two functions: one for true with level up; one for false with while loop
-#  while player_answer is not correct_answer, character attempt -1, etc
+def player_is_wrong(character:dict):
+    print("You got a 0 on the quiz.")
+    character['attempts'] -= 1
+
+
+def no_more_attempts(character:dict):
+    if character['attempts'] == 0:
+        print('You dropped out of the academy.')
+
+
+make two functions: one for true with level up; one for false with while loop
+ while player_answer is not correct_answer, character attempt -1, etc
+
+
                 if player answer is correct answer
                         do the level up stuff
                         break loop
