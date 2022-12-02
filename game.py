@@ -35,10 +35,10 @@ def make_character(name: str) -> dict:
             'y-coordinate': 1}
 
 
-def describe_current_location(board, character):
+def describe_current_location(board: dict, character: dict) -> str:
     character_coordinate = character['x-coordinate'], character['y-coordinate']
     character_location_on_board = board[character_coordinate]['room']
-    print(f"Your current location is: {character_location_on_board}")
+    return f"Your current location is: {character_location_on_board}"
 
 
 def get_user_choice(choices: list) -> int:
@@ -168,12 +168,12 @@ def game():  # called from main
     achieved_goal = False
     while not achieved_goal:
         # Tell the user where they are
-        describe_current_location(board, character)
+        print(describe_current_location(board, character))
         direction = get_user_choice(movements)
         valid_move = validate_move(rows, columns, character, direction)
         if valid_move:
             move_character(character, direction)
-            describe_current_location(board, character)
+            print(describe_current_location(board, character))
     #         there_is_a_challenge = check_for_challenges()
     #         if there_is_a_challenge:
             print(make_riddle(character, board, riddle_number))
