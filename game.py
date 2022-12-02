@@ -76,13 +76,19 @@ def move_character(character: dict, player_movement: int) -> None:
         character['x-coordinate'] += 1
 
 
-def make_riddle(character: dict, board: dict, riddle_number: int) -> str:
-    get_riddles = open('riddles.json', 'r')
-    riddles = json.load(get_riddles)
+def check_for_room(character: dict, board: dict) -> bool:
     current_character_coordinate = (character['x-coordinate'], character['y-coordinate'])
     current_room = board[current_character_coordinate]['room']
     if current_room != 'hallway':
-        return riddles['riddles_list'][riddle_number]["riddles"]
+        return True
+    else:
+        return False
+
+
+def make_riddle(riddle_number: int) -> str:
+    get_riddles = open('riddles.json', 'r')
+    riddles = json.load(get_riddles)
+    return riddles['riddles_list'][riddle_number]["riddles"]
 
 
 def get_player_answer() -> str:
@@ -176,13 +182,15 @@ def game():  # called from main
             print(describe_current_location(board, character))
     #         there_is_a_challenge = check_for_challenges()
     #         if there_is_a_challenge:
-            print(make_riddle(character, board, riddle_number))
-            player_answer = get_player_answer()
-            correct_answer = get_correct_answer(riddle_number)
-            if check_player_answer(player_answer, correct_answer):
-                player_is_correct(character)
-            else:
-                player_is_wrong(character)
+            there_is_a_room = check_for_room(character, board)
+            if there_is_a_room:
+                print(make_riddle(riddle_number))
+                player_answer = get_player_answer()
+                correct_answer = get_correct_answer(riddle_number)
+                if check_player_answer(player_answer, correct_answer):
+                    player_is_correct(character)
+                else:
+                    player_is_wrong(character)
             achieved_goal = check_if_goal_attained(character)
         else:
             print("Ah! You can't go there. Please try again...")
