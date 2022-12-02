@@ -110,6 +110,23 @@ def check_player_answer(player_answer: str, correct_answer: str) -> bool:
         return False
 
 
+def make_final_riddle():
+    final_riddle = 'What is 2 + 2 = ?'
+    return final_riddle
+
+
+def get_player_final_answer():
+    print("Please enter your final answer here: ")
+    return input()
+
+
+def check_player_final_answer(final_player_answer):
+    if final_player_answer == '4':
+        return True
+    else:
+        return False
+
+
 def player_is_correct(character: dict):
     print("Correct! You have gained 10 XP")
     character['XP'] += 10
@@ -189,6 +206,11 @@ def game():  # called from main
                 correct_answer = get_correct_answer(riddle_number)
                 if check_player_answer(player_answer, correct_answer):
                     player_is_correct(character)
+
+                    final_riddle = make_final_riddle()
+                    final_player_answer = get_player_final_answer()
+                    correct_player_final_answer = check_player_final_answer(final_player_answer)
+
                     print(character)
                 else:
                     player_is_wrong(character)
