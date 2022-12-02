@@ -2,6 +2,26 @@ import json
 import io
 from random import randint
 
+
+def make_board(rows: int, columns: int):
+    board_dict = {}
+    # get_rooms = open('rooms.json', 'r')
+    # rooms = json.load(get_rooms)
+    # hallway = {'room': 'hallway'}
+    for row in range(rows):
+        for column in range(columns):
+            board_dict[(row, column)] = 'banana'
+    # print(board_dict)
+    board_dict[(0, 0)] = 'banana'
+    for value in board_dict.values():
+        print(value, end='')
+    print(board_dict.values())
+
+
+make_board(10, 10)
+
+
+
 def make_riddle(character: dict, board: dict) -> str:
     get_riddles = open('riddles.json', 'r')
     riddles = json.load(get_riddles)
