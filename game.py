@@ -120,7 +120,7 @@ def move_character(character: dict, player_movement: int) -> None:
 
 def check_for_room(character: dict, board: dict) -> bool:
     current_character_coordinate = (character['x-coordinate'], character['y-coordinate'])
-    current_room = board[current_character_coordinate]['room']
+    current_room = board[current_character_coordinate]
     if current_room != 'hallway':
         return True
     else:
