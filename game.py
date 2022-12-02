@@ -172,11 +172,10 @@ def game():  # called from main
             print(make_riddle(character, board, riddle_number))
             player_answer = get_player_answer()
             correct_answer = get_correct_answer(riddle_number)
-            check_player_answer(player_answer, correct_answer)
-
-    #             execute_challenge_protocol(character)
-    #             if character_has_leveled():
-    #                 execute_glow_up_protocol()
+            if check_player_answer(player_answer, correct_answer):
+                player_is_correct(character)
+            else:
+                player_is_wrong(character)
     #     achieved_goal = check_if_goal_attained(board, character)
         else:
             print("Ah! You can't go there. Please try again...")
