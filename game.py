@@ -18,6 +18,7 @@ def make_board(rows: int, columns: int) -> dict:
     :postcondition: make a board of size row x column
     :postcondition: the keys in the dictionary are a tuple representing coordinates of the board as (rows, columns)
     :postcondition: the value of the dictionary represents the location which is either a hallway or a room
+    :postcondition: rows and columns are unchanged
     :return: a dictionary that has hallways and rooms from a JSON file for every tile in the game
     """
     get_rooms = open('rooms.json', 'r')
@@ -41,17 +42,24 @@ def make_board(rows: int, columns: int) -> dict:
     return board_dict
 
 
-def print_board(board: dict, rows: int, columns: int, character: int) -> None:
+def print_board(board: dict, rows: int, columns: int, character: dict) -> None:
     """
     Print board that shows the location of each tile with emojis, and where the character is located on the board.
 
     👹represents the character, 🏫 represents the hallways, and 📘 represents a room.
 
-    :param board:
-    :param rows:
-    :param columns:
-    :param character:
-    :return:
+    :param board: a dictionary
+    :param rows: an integer
+    :param columns: an integer
+    :param character: a dictionary
+    :precondition: board must be a dictionary representing the current game board
+    :precondition: rows must be a positive non-zero integer
+    :precondition: columns must be a positive non-zero integer
+    :precondition: character must be a dictionary with the attribute keys of 'x-coordinate' and 'y-coordinate'
+    :postcondition: prints game board that shows the tiles where there are hallways, rooms, and a character
+    :postcondition: the board dictionary is unchanged
+    :postcondition: rows and columns are unchanged
+    :postcondition: the character dictionary is unchanged
     """
     character_location = (character['x-coordinate'], character['y-coordinate'])
     for column in range(columns):
@@ -70,6 +78,7 @@ def character_name() -> str:
     """
     Return user input.
 
+    :postcondition: prints the user input
     :return: the user input as a string
     """
     print("Please enter a name for your character: ")
@@ -83,6 +92,7 @@ def make_character(name: str) -> dict:
     :param name: a string
     :precondition: name must be a string
     :postcondition: creates a dictionary with the player's name and their character stats
+    :postcondition: name does not change
     :return: a dictionary with the character stats
     """
     return {'Name': name,
@@ -105,7 +115,8 @@ def get_user_choice(choices: list) -> int:
 
     :param choices: a list
     :precondition: choices must be a list of possible options for a player to choose from
-    :postcondition: correctly returns an integer that is the player's choice
+    :postcondition: correctly returns an integer that represents the player's choice
+    :postcondition: the choices list is unchanged
     :return: an integer representing the player's chosen option
     """
     print("Where would you like to go?")
@@ -119,6 +130,21 @@ def get_user_choice(choices: list) -> int:
 
 
 def validate_move(width: int, height: int, character: dict, direction: int) -> bool:
+    """
+    Return True if character's move is valid on the game board based on the board size, False otherwise.
+
+    :param width: an integer
+    :param height: an integer
+    :param character: a dictionary
+    :param direction: an integer
+    :precondition: width must be a positive non-zero integer
+    :precondition: height must be a positive non-zero integer
+    :precondition: character must be a dictionary with the attribute keys of 'x-coordinate' and 'y-coordinate'
+    :precondition: direction must be an integer representing the movement that the user input
+    :postcondition: return True if character's coordinate and user's next movement are within the board coordinates
+    :postcondition: return False if character's coordinate and user's next movement are not in the board coordinates
+    :return: True or False
+    """
     if direction == 1 and character['y-coordinate'] < 1:
         return False
     if direction == 2 and character['y-coordinate'] == height - 1:
