@@ -63,9 +63,6 @@ board = make_board(10, 10)
     #         print(value, end='')
 
 
-#
-#
-#
 # def make_riddle(character: dict, board: dict) -> str:
 #     get_riddles = open('riddles.json', 'r')
 #     riddles = json.load(get_riddles)
@@ -152,3 +149,8 @@ board = make_board(10, 10)
 # #
 # # current_room = board[current_character_coordinate]['room']
 # # there_is_a_challenge = check_for_challenge()
+
+# def describe_current_location(board: dict, character: dict) -> str:
+#     character_coordinate = (character['x-coordinate'], character['y-coordinate'])
+#     character_location_on_board = board[character_coordinate]['room']
+#     return f"Your current location is: {character_location_on_board}"
