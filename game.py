@@ -196,7 +196,7 @@ def game():
     """
     rows = 10
     columns = 10
-    movements = ['Up', 'Down', 'Left', 'Right']
+    movements = ['Up', 'Down', 'Left', 'Right', 'quit']
     board = make_board(rows, columns)
     name = character_name().title()
     print()
