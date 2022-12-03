@@ -192,7 +192,7 @@ def game():
     name = character_name().title()
     print(f"Welcome to Akademia Matematyczna, {name}! "
           f"You have been accepted into our intense program. Only select few are enrolled at our academy :)")
-    time.sleep(3)
+    time.sleep(2)
     school_art()
     print("\x1B[3m" + "You notice a whiteboard with some scribbles on it... " + "\x1B[0m")
     time.sleep(3)
