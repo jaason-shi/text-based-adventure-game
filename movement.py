@@ -16,7 +16,7 @@ def get_user_choice(choices: list) -> int:
         print(number, choice)
     player_choice = int(input("Please enter a number to move: "))
     if player_choice == 5:
-        sys.exit()
+        sys.exit("You did not wish to complete your studies. Sorry to see you go")
     elif 1 <= player_choice <= len(choices):
         return player_choice
     else:
