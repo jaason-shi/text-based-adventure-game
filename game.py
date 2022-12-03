@@ -157,7 +157,7 @@ def game():
     time.sleep(1)
     print("Loading...")
     time.sleep(1.5)
-    print(school_art())
+    school_art()
     print("You have entered the math academy! Walk around to explore the school grounds. "
           "There may be a POP QUIZ in some of the rooms so be ready to put your thinking cap on!")
     time.sleep(1)
@@ -204,7 +204,7 @@ def game():
                 if correct_player_final_answer:
                     achieved_goal = True
                     print("Congratulations! You have graduated from the academy.")
-                    print(grad_cap())
+                    grad_cap()
                 else:
                     character['Grade'] -= 1
                     print("Oh no, you need to go review Grade 2 again...")
