@@ -140,7 +140,7 @@ def validate_move(width: int, height: int, character: dict, direction: int) -> b
     :precondition: width must be a positive non-zero integer
     :precondition: height must be a positive non-zero integer
     :precondition: character must be a dictionary with the attribute keys of 'x-coordinate' and 'y-coordinate'
-    :precondition: direction must be an integer representing the movement that the user input
+    :precondition: direction must be an integer representing the movement that the user input (1, 2, 3, or 4)
     :postcondition: return True if character's coordinate and user's next movement are within the board coordinates
     :postcondition: return False if character's coordinate and user's next movement are not in the board coordinates
     :return: True or False
@@ -158,6 +158,16 @@ def validate_move(width: int, height: int, character: dict, direction: int) -> b
 
 
 def move_character(character: dict, player_movement: int) -> None:
+    """
+    Update character dictionary with new 'x-coordinate' and 'y-coordinate' values based on the player's movement.
+
+    :param character: a dictionary
+    :param player_movement: an integer
+    :precondition: character must be a dictionary with the attribute keys of 'x-coordinate' and 'y-coordinate'
+    :precondition: player_movement must be an integer representing the movement that the user input (1, 2, 3, or 4)
+    :postcondition: correctly changes character dictionary values of the 'x-coordinate' and 'y-coordinate' keys
+    :postcondition: player_movement is unchanged
+    """
     if player_movement == 1:
         character['y-coordinate'] -= 1
     if player_movement == 2:
