@@ -106,18 +106,21 @@ def player_is_correct(character: dict) -> None:
     :postcondition: correctly increments value of character grade by 1, attempts by 3 if character xp has reached 10
     :postcondition: correctly increments value of character grade by 1, attempts by 3 if character xp has reached 30
     """
+    time.sleep(2)
     print("Correct! You have gained 10 XP")
     character['XP'] += 10
     character['Attempts'] -= 1
     if character['XP'] == 10:
         character["Grade"] += 1
         character["Attempts"] += 3
+        time.sleep(2)
         print('You made it to Grade 2!')
     elif character['XP'] == 30:
         character["Grade"] += 1
         character["Attempts"] += 3
         time.sleep(2)
-        print("Ominous boss music begins to play... the math teacher appears in front of you")
+        print("\x1B[3m" + "Ominous boss music begins to play... the math teacher appears in front of you" + "\x1B[0m")
+        print()
 
 
 def player_is_wrong(character: dict) -> None:
@@ -152,7 +155,10 @@ def no_more_attempts(character: dict) -> bool:
     True
     """
     if character['Attempts'] == 0:
-        print('You dropped out of the academy. :( Please reapply next year...')
+        print("I'm sorry to inform you that you have failed all your classes. I will now escort you out of the academy."
+              "Please reapply next year and pay the tuition fee again.")
+        time.sleep(2)
+        print("\x1B[3m" + "You are escorted out by the janitor... " + "\x1B[0m")
         return True
     else:
         return False
@@ -190,21 +196,26 @@ def game():
     movements = ['Up', 'Down', 'Left', 'Right']
     board = make_board(rows, columns)
     name = character_name().title()
+    print()
+    time.sleep(2)
     print(f"Welcome to Akademia Matematyczna, {name}! "
           f"You have been accepted into our intense program. Only select few are enrolled at our academy :)")
     time.sleep(1)
     print(ascii_art.school)
+    time.sleep(2)
     print("\x1B[3m" + "You notice a whiteboard with some scribbles on it... " + "\x1B[0m")
+    print()
     time.sleep(3)
     print("You have entered Akademia Matematyczna! Teachers will give you POP QUIZZES during class. "
           "These are mandatory and closed book. No cheating allowed!")
-    time.sleep(2)
-    print("To graduate from the academy, you will need to do these quizzes to reach Grade 3 and take the final exam. "
-          "Failure to do so will result in your dropping out.")
-    time.sleep(2)
-    print("The first class starts at 9:00 am. Be ready to put your thinking cap on!")
     time.sleep(3)
-    print("\x1B[3m" + "You take a look at your watch... 8:59." + "\x1B[0m")
+    print("To graduate from the academy, you will need to do these quizzes to reach Grade 3 and take the final exam. "
+          "Failure to do so will result in you dropping out.")
+    time.sleep(3)
+    print("The first class starts at 9:00 am. Be ready to put your thinking cap on!")
+    print()
+    time.sleep(3)
+    print("\x1B[3m" + "You take a look at your watch... 8:59 am." + "\x1B[0m")
     time.sleep(2)
     print("\x1B[3m" + "You quickly scramble to find your classroom..." + "\x1B[0m")
     character = make_character(name)
@@ -213,8 +224,10 @@ def game():
     time.sleep(2)
     achieved_goal = False
     while not achieved_goal:
+        print()
         print_board(board, rows, columns, character)
         time.sleep(2)
+        print()
         direction = get_user_choice(movements)
         valid_move = validate_move(rows, columns, character, direction)
 
@@ -225,12 +238,12 @@ def game():
             there_is_a_room = check_for_room(character, board)
             if there_is_a_room:
                 riddle_number = randint(0, 12)
+                print()
                 print('🤓 POP QUIZ! 🤓 Here is your question: ', make_riddle(riddle_number))
                 player_answer = get_player_answer()
                 correct_answer = get_correct_answer(riddle_number)
                 if check_player_answer(player_answer, correct_answer):
                     player_is_correct(character)
-                    print(character)
                 else:
                     player_is_wrong(character)
 
@@ -242,9 +255,12 @@ def game():
                 time.sleep(2)
                 print(ascii_art.teacher)
                 time.sleep(2)
-                print('You made it to Grade 3! 🤓 It is time for the final exam... be prepared! 📚'
-                      'This is mandatory and closed book. I will find you if you cheat...')
+                print("You made it to Grade 3! 🤓 I'm here to deliver your final exam... 📚 "
+                      'Remember that this is mandatory and closed book. I will find you if you cheat.')
+                print()
+                print("\x1B[3m" + "You grab the final exam paper... " + "\x1B[0m")
                 time.sleep(2)
+                print()
                 print('Final Exam: Seven boys met each other at a party. '
                       'Each of them shook hands only once with each of the other boys. '
                       'What is the total number of handshakes that took place?')
@@ -253,8 +269,19 @@ def game():
 
                 if correct_player_final_answer:
                     achieved_goal = True
-                    print("Congratulations! You have graduated from the academy.")
+                    time.sleep(3)
+                    print()
+                    print(f"Congratulations {name}, you have passed the final exam! ")
+                    time.sleep(2)
+                    print("You have been an excellent student at our academy. ")
+                    time.sleep(2)
+                    print("As a token of my appreciation, take this hat that I found in the library")
+                    time.sleep(3)
                     print(ascii_art.grad_cap)
+                    time.sleep(2)
+                    print("\x1B[3m" + "You grab the hat to try it on, but it doesn't fit... " + "\x1B[0m")
+                    time.sleep(2)
+                    print("\x1B[3m" + "You hear the math teacher run away... " + "\x1B[0m")
                 else:
                     character['Grade'] -= 1
                     print("Oh no, you need to go review Grade 2 again...")
