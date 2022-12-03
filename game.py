@@ -10,7 +10,7 @@ from movement import get_user_choice, validate_move, move_character
 from check_answers import get_player_answer, get_correct_answer, check_player_answer, \
     get_player_final_answer, check_player_final_answer
 import ascii_art
-import sys
+
 
 def character_name() -> str:
     """
@@ -196,7 +196,7 @@ def game():
     """
     rows = 10
     columns = 10
-    movements = ['Up', 'Down', 'Left', 'Right', 'quit']
+    movements = ['Up', 'Down', 'Left', 'Right', 'Quit']
     board = make_board(rows, columns)
     name = character_name().title()
     print()
@@ -218,9 +218,9 @@ def game():
     print("The first class starts at 9:00 am. Be ready to put your thinking cap on!")
     print()
     time.sleep(3)
-    print("\x1B[3m" + "You take a look at your watch... 8:59 am." + "\x1B[0m")
+    print("\x1B[3m" + "You take a look at your watch... 8:59 am. "
+                      "You quickly scramble to find your classroom..." + "\x1B[0m")
     time.sleep(2)
-    print("\x1B[3m" + "You quickly scramble to find your classroom..." + "\x1B[0m")
     character = make_character(name)
     time.sleep(2)
     print(f"Here are your character stats: {character}")
