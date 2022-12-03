@@ -177,8 +177,6 @@ def game():
     time.sleep(1)
     achieved_goal = False
     while not achieved_goal:
-        # Tell the user where they are
-        # print(describe_current_location(board, character))
         print_board(board, rows, columns, character)
         time.sleep(2)
         direction = get_user_choice(movements)
@@ -186,8 +184,6 @@ def game():
 
         if valid_move:
             move_character(character, direction)
-            # print(describe_current_location(board, character))
-
             print(character)
 
             there_is_a_room = check_for_room(character, board)
