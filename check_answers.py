@@ -74,6 +74,11 @@ def check_player_final_answer(final_player_answer: str) -> bool:
     :postcondition: correctly determines if final_player_answer is 21
     :postcondition: final_player_answer is unchanged
     :return: True if final_player_answer is the value of 21, else False
+
+    >>> check_player_final_answer('21')
+    True
+    >>> check_player_final_answer('20')
+    False
     """
     if final_player_answer == '21':
         return True
