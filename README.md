@@ -19,4 +19,4 @@ This is written in markdown. Read about markdown here: [markdowncheatsheet](http
 
 
 ## Any important comments you'd like to make about your work:
-Replace this line with any comments you want to share
+We had lots of fun! :) We think this is a good base for a game that we could expand and work on in the future.
