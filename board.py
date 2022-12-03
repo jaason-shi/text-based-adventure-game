@@ -13,8 +13,9 @@ def make_board(rows: int, columns: int) -> dict:
     :postcondition: make a board of size row x column
     :postcondition: the keys in the dictionary are a tuple representing coordinates of the board as (rows, columns)
     :postcondition: the value of the dictionary represents the location which is either a hallway or a room
+    :postcondition: rooms are taken from the rooms.json file and are randomly assigned to keys in the dictionary
     :postcondition: rows and columns are unchanged
-    :return: a dictionary that has hallways and rooms from a JSON file for every tile in the game
+    :return: a dictionary that has hallways and rooms from the rooms.json file for every tile in the game
     """
     get_rooms = open('rooms.json', 'r')
     rooms = json.load(get_rooms)
