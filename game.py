@@ -83,7 +83,8 @@ def make_riddle(riddle_number: int) -> str:
     :return: a string from the dictionary key "riddles" by using the riddle_number as the index
 
     >>> make_riddle(0)
-    'There are several books on a bookshelf. If one book is the 4th from the left and 6th from the right, how many books are on the shelf?'
+    'There are several books on a bookshelf. If one book is the 4th from the left and 6th from the right,
+    how many books are on the shelf?'
     >>> make_riddle(12)
     'The product of two consecutive negative even integers is 24. What is the smaller of the two numbers?'
     >>> make_riddle(5)
@@ -151,7 +152,8 @@ def no_more_attempts(character: dict) -> bool:
     False
     >>> test_character_two = {'Name': 'chris', 'Grade': 1, 'Attempts': 0, 'XP': 0, 'x-coordinate': 0, 'y-coordinate': 0}
     >>> no_more_attempts(test_character_two)
-    I'm sorry to inform you that you have failed all your classes. I will now escort you out of the academy.Please reapply next year and pay the tuition fee again.
+    I'm sorry to inform you that you have failed all your classes. I will now escort you out of the academy.
+    Please reapply next year and pay the tuition fee again.
     True
     """
     if character['Attempts'] == 0:
@@ -183,6 +185,7 @@ def check_if_goal_attained(character: dict) -> bool:
         return True
     else:
         return False
+
 
 def game():
     """
