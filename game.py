@@ -108,14 +108,14 @@ def player_is_correct(character: dict) -> None:
     :postcondition: correctly increments value of character grade by 1, attempts by 3 if character xp has reached 30
     """
     time.sleep(2)
-    print("Correct! You have gained 10 XP")
+    print("Correct! You have gained 10 XP 👏")
     character['XP'] += 10
     character['Attempts'] -= 1
     if character['XP'] == 10:
         character["Grade"] += 1
         character["Attempts"] += 3
         time.sleep(2)
-        print('You made it to Grade 2!')
+        print('You made it to Grade 2! 🥳')
     elif character['XP'] == 30:
         character["Grade"] += 1
         character["Attempts"] += 3
@@ -158,7 +158,7 @@ def no_more_attempts(character: dict) -> bool:
     """
     if character['Attempts'] == 0:
         print("I'm sorry to inform you that you have failed all your classes. I will now escort you out of the academy."
-              "Please reapply next year and pay the tuition fee again.")
+              " Please reapply next year and pay the tuition fee again.")
         return True
     else:
         return False
@@ -275,7 +275,7 @@ def game():
                     achieved_goal = True
                     time.sleep(3)
                     print()
-                    print(f"Congratulations {name}, you have passed the final exam! ")
+                    print(f"Congratulations {name}, you have passed the final exam! 🥳")
                     time.sleep(2)
                     print("You have been an excellent student at our academy. ")
                     time.sleep(2)
