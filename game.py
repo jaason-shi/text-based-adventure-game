@@ -281,7 +281,7 @@ def game():
                     time.sleep(2)
                     print("You have been an excellent student at our academy. ")
                     time.sleep(2)
-                    print("As a token of my appreciation, take this hat that I found in the library")
+                    print("As a token of my appreciation, take this hat that I found in the library.")
                     time.sleep(3)
                     print(ascii_art.grad_cap)
                     time.sleep(2)
