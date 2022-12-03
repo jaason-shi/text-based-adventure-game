@@ -11,7 +11,7 @@ sys.exit
 def make_board(rows: int, columns: int):
     board_dict = {}
     random_room = randint(0, 9)
-    get_rooms = open('rooms.json', 'r')
+    get_rooms = open('../rooms.json', 'r')
     rooms = json.load(get_rooms)
     # hallway = {'room': 'hallway'}
 

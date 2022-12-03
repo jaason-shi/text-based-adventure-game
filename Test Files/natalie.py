@@ -11,7 +11,7 @@ test_character = make_character('test')
 
 
 def make_board(rows, columns):
-    get_rooms = open('rooms.json', 'r')
+    get_rooms = open('../rooms.json', 'r')
     rooms = json.load(get_rooms)
 
     board_dict = {}
