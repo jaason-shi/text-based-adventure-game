@@ -189,11 +189,6 @@ def check_if_goal_attained(character: dict) -> bool:
         return False
 
 
-def player_quits(choice: int) -> None:
-    if choice == 5:
-        sys.exit()
-
-
 def game():
     """
     Run the game.
@@ -237,7 +232,6 @@ def game():
         time.sleep(2)
         print()
         direction = get_user_choice(movements)
-        player_quits(direction)
         valid_move = validate_move(rows, columns, character, direction)
 
         if valid_move:
