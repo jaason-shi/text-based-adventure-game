@@ -84,6 +84,10 @@ def make_riddle(riddle_number: int) -> str:
 
     >>> make_riddle(0)
     'There are several books on a bookshelf. If one book is the 4th from the left and 6th from the right, how many books are on the shelf?'
+    >>> make_riddle(12)
+    'The product of two consecutive negative even integers is 24. What is the smaller of the two numbers?'
+    >>> make_riddle(5)
+    "What number do you get when you multiply all of the numbers on a telephone's number pad?"
     """
     get_riddles = open('riddles.json', 'r')
     riddles = json.load(get_riddles)
