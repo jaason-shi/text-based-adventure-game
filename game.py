@@ -9,7 +9,7 @@ from board import make_board, print_board
 from movement import get_user_choice, validate_move, move_character
 from check_answers import get_player_answer, get_correct_answer, check_player_answer, \
     get_player_final_answer, check_player_final_answer
-from ascii_art import school_art, grad_cap
+from ascii_art import school_art, grad_cap, teacher
 
 
 def character_name() -> str:
@@ -98,7 +98,8 @@ def player_is_correct(character: dict) -> None:
     elif character['XP'] == 30:
         character["Grade"] += 1
         character["Attempts"] += 3
-        print('You made it to Grade 3! 🤓 It is time for the final exam... be prepared! 📚')
+        time.sleep(1)
+        print("Ominous boss music begins to play... the principal appears in front of you")
 
 
 def player_is_wrong(character: dict) -> None:
@@ -153,13 +154,17 @@ def game():
     movements = ['Up', 'Down', 'Left', 'Right']
     board = make_board(rows, columns)
     name = character_name().title()
-    print(f"Welcome to the math academy, {name}! We hope to see you graduate with flying colours! :)")
+    print(f"Welcome to Akademia Matematyczna, {name}! "
+          f"You have been accepted into our intense program. Only select few are enrolled at our academy :)")
     time.sleep(1)
     print("Loading...")
     time.sleep(1.5)
     school_art()
-    print("You have entered the math academy! Walk around to explore the school grounds. "
-          "There may be a POP QUIZ in some of the rooms so be ready to put your thinking cap on!")
+    print("You have entered the math academy! Walk around to explore the school grounds.")
+    print("POP QUIZZES are scattered in some of the rooms so be ready to put your thinking cap on! "
+          "These are mandatory and closed book quizzes... ")
+    print("To graduate from the academy, you will need to do these quizzes to reach Grade 3 and take the final exam. "
+          "No cheating allowed!")
     time.sleep(1)
     print("You are now walking inside...")
     time.sleep(1)
@@ -195,7 +200,12 @@ def game():
 
             # if character level == 3
             if check_if_goal_attained(character):
-                print('Seven boys met each other at a party. '
+                time.sleep(2)
+                teacher()
+                print('You made it to Grade 3! 🤓 It is time for the final exam... be prepared! 📚'
+                      'This is mandatory and closed book. I will find you if you cheat...')
+                time.sleep(2)
+                print('Final Exam: Seven boys met each other at a party. '
                       'Each of them shook hands only once with each of the other boys. '
                       'What is the total number of handshakes that took place?')
                 final_player_answer = get_player_final_answer()
