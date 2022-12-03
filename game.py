@@ -144,11 +144,14 @@ def no_more_attempts(character: dict) -> bool:
     False
     >>> test_character_two = {'Name': 'chris', 'Grade': 1, 'Attempts': 0, 'XP': 0, 'x-coordinate': 0, 'y-coordinate': 0}
     >>> no_more_attempts(test_character_two)
+    You dropped out of the academy. :( Please reapply next year...
     True
     """
     if character['Attempts'] == 0:
         print('You dropped out of the academy. :( Please reapply next year...')
         return True
+    else:
+        return False
 
 
 def check_if_goal_attained(character: dict) -> bool:
@@ -160,10 +163,18 @@ def check_if_goal_attained(character: dict) -> bool:
     :postcondition: correctly determines if value character grade is attained
     :postcondition: character is unchanged
     :return: True if character grade is 3, else False
+
+    >>> test_character = {'Name': 'chris', 'Grade': 1, 'Attempts': 3, 'XP': 0, 'x-coordinate': 0, 'y-coordinate': 0}
+    >>> check_if_goal_attained(test_character)
+    False
+    >>> test_character_two = {'Name': 'chris', 'Grade': 3, 'Attempts': 3, 'XP': 0, 'x-coordinate': 0, 'y-coordinate': 0}
+    >>> check_if_goal_attained(test_character_two)
+    True
     """
     if character['Grade'] == 3:
         return True
-
+    else:
+        return False
 
 def game():
     """
