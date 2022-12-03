@@ -7,7 +7,19 @@ import json
 from random import randint
 
 
-def make_board(rows, columns):
+def make_board(rows: int, columns: int) -> dict:
+    """
+    Create dictionary to represent the game board with given number of rows and columns.
+
+    :param rows: an integer
+    :param columns: an integer
+    :precondition: rows must be a positive non-zero integer
+    :precondition: columns must be a positive non-zero integer
+    :postcondition: make a board of size row x column
+    :postcondition: the keys in the dictionary are a tuple representing coordinates of the board as (rows, columns)
+    :postcondition: the value of the dictionary represents the location which is either a hallway or a room
+    :return: a dictionary that has hallways and rooms from a JSON file for every tile in the game
+    """
     get_rooms = open('rooms.json', 'r')
     rooms = json.load(get_rooms)
 
@@ -29,7 +41,18 @@ def make_board(rows, columns):
     return board_dict
 
 
-def print_board(board, rows, columns, character):
+def print_board(board: dict, rows: int, columns: int, character: int) -> None:
+    """
+    Print board that shows the location of each tile with emojis, and where the character is located on the board.
+
+    👹represents the character, 🏫 represents the hallways, and 📘 represents a room.
+
+    :param board:
+    :param rows:
+    :param columns:
+    :param character:
+    :return:
+    """
     character_location = (character['x-coordinate'], character['y-coordinate'])
     for column in range(columns):
         for row in range(rows):
