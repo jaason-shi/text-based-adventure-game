@@ -21,7 +21,8 @@ def make_board(rows, columns):
             board_dict[(row, column)] = 'hallway'
 
     for row in range(1, rows):
-        board_dict[row, 1] = rooms["rooms_list"][randint(0, 9)]['room']
+        if row >= 3:
+            board_dict[randint(0, 9), row] = rooms["rooms_list"][randint(0, 9)]['room']
         if row <= 8:
             board_dict[randint(0, 9), row] = rooms["rooms_list"][randint(0, 9)]['room']
         if row > 3:
@@ -43,6 +44,35 @@ def print_board(board, rows, columns, character):
             elif current_location != 'hallway':
                 print("📚", end='')
         print()
+
+
+def move_character(character: dict, player_movement: int) -> None:
+    if player_movement == 1:
+        character['y-coordinate'] -= 1
+    if player_movement == 2:
+        character['y-coordinate'] += 1
+    if player_movement == 3:
+        character['x-coordinate'] -= 1
+    if player_movement == 4:
+        character['x-coordinate'] += 1
+
+def get_user_choice(choices: list) -> int:
+    """
+    Return the player's inputted choice.
+
+    :param choices: a list
+    :precondition: choices must be a list of possible options for a player to choose from
+    :postcondition: correctly returns an integer that is the player's choice
+    :return: an integer representing the player's chosen option
+    """
+    print("Where would you like to go?")
+    for number, choice in enumerate(choices, 1):
+        print(number, choice)
+    player_choice = int(input("Please enter a number to move: "))
+    if 1 <= player_choice <= len(choices):
+        return player_choice
+    else:
+        print("That doesn't work! Please try again.")
 
 
 print_board(make_board(10, 10), 10, 10, test_character)
