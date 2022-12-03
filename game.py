@@ -157,6 +157,7 @@ def no_more_attempts(character: dict) -> bool:
     True
     """
     if character['Attempts'] == 0:
+        print(ascii_art.sad)
         print("I'm sorry to inform you that you have failed all your classes. I will now escort you out of the academy."
               " Please reapply next year and pay the tuition fee again.")
         return True
