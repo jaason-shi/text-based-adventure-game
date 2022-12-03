@@ -36,6 +36,12 @@ def validate_move(width: int, height: int, character: dict, direction: int) -> b
     :postcondition: character is unchanged
     :postcondition: direction is unchanged
     :return: True or False
+
+    >>> test_character = {'Name': 'test', 'Grade': 1, 'Attempts': 3, 'XP': 0, 'x-coordinate': 5, 'y-coordinate': 0}
+    >>> validate_move(10, 10, test_character, 1)
+    False
+    >>> validate_move(10, 10, test_character, 2)
+    True
     """
     if direction == 1 and character['y-coordinate'] < 1:
         return False
