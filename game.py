@@ -106,6 +106,7 @@ def player_is_correct(character: dict) -> None:
     :postcondition: correctly decrements value of character attempts by 1, increments value of character xp by 10
     :postcondition: correctly increments value of character grade by 1, attempts by 3 if character xp has reached 10
     :postcondition: correctly increments value of character grade by 1, attempts by 3 if character xp has reached 30
+    or higher
     """
     time.sleep(2)
     print("Correct! You have gained 10 XP 👏")
@@ -116,7 +117,7 @@ def player_is_correct(character: dict) -> None:
         character["Attempts"] += 3
         time.sleep(2)
         print('You made it to Grade 2! 🥳')
-    elif character['XP'] == 30:
+    elif character['XP'] >= 30:
         character["Grade"] += 1
         character["Attempts"] += 3
         time.sleep(2)
