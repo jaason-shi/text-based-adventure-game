@@ -182,6 +182,16 @@ def move_character(character: dict, player_movement: int) -> None:
 
 
 def check_for_room(character: dict, board: dict) -> bool:
+    """
+    Determine if the character's current room is not hallway.
+
+    :param character: a dictionary
+    :param board: a dictionary
+    :precondition: character must be a dictionary with the character attribute keys of 'x-coordinate' and 'y-coordinate'
+    :precondition: board must be a dictionary representing the current game board
+    :postcondition: correctly determines if the character's current room is not hallway
+    :return: True if character's current room is not hallway, else False
+    """
     current_character_coordinate = (character['x-coordinate'], character['y-coordinate'])
     current_room = board[current_character_coordinate]
     if current_room != 'hallway':
@@ -191,6 +201,15 @@ def check_for_room(character: dict, board: dict) -> bool:
 
 
 def make_riddle(riddle_number: int) -> str:
+    """
+    Return the value as a string from the dictionary key "riddles" by using the riddle_number as the index.
+
+    :param riddle_number: an integer
+    :precondition: riddle_number must be an integer from [0, 12]
+    :postcondition: correctly returns value as a string from dictionary key "riddles"
+    :postcondition: riddle_number is unchanged
+    :return: a string from the dictionary key "riddles" by using the riddle_number as the index
+    """
     get_riddles = open('riddles.json', 'r')
     riddles = json.load(get_riddles)
     return riddles['riddles_list'][riddle_number]["riddles"]
