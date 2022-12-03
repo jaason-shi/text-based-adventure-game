@@ -10,7 +10,7 @@ from movement import get_user_choice, validate_move, move_character
 from check_answers import get_player_answer, get_correct_answer, check_player_answer, \
     get_player_final_answer, check_player_final_answer
 import ascii_art
-
+import sys
 
 def character_name() -> str:
     """
@@ -189,6 +189,11 @@ def check_if_goal_attained(character: dict) -> bool:
         return False
 
 
+def player_quits(choice: int) -> None:
+    if choice == 5:
+        sys.exit()
+
+
 def game():
     """
     Run the game.
@@ -232,6 +237,7 @@ def game():
         time.sleep(2)
         print()
         direction = get_user_choice(movements)
+        player_quits(direction)
         valid_move = validate_move(rows, columns, character, direction)
 
         if valid_move:
