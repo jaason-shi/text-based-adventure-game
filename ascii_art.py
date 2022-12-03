@@ -1,5 +1,9 @@
-def school_art():
-    print( """
+def school_art() -> None:
+    """
+    Print an ascii art of a school.
+
+    """
+    print("""
     \_/
   --(_)--  .
     / \   /_|
@@ -11,7 +15,11 @@ def school_art():
     """)
 
 
-def grad_cap():
+def grad_cap() -> None:
+    """
+    Print an ascii art of a graduation cap.
+
+    """
     print(""" 
       _.-'`'-._
    .-'    _    '-.
