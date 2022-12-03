@@ -117,7 +117,7 @@ def player_is_correct(character: dict) -> None:
         character["Grade"] += 1
         character["Attempts"] += 3
         time.sleep(1)
-        print("Ominous boss music begins to play... the principal appears in front of you")
+        print("Ominous boss music begins to play... the math teacher appears in front of you")
 
 
 def player_is_wrong(character: dict) -> None:
@@ -192,18 +192,21 @@ def game():
     name = character_name().title()
     print(f"Welcome to Akademia Matematyczna, {name}! "
           f"You have been accepted into our intense program. Only select few are enrolled at our academy :)")
-    time.sleep(1)
-    print("Loading...")
-    time.sleep(1.5)
+    time.sleep(2)
     school_art()
-    print("You have entered the math academy! Walk around to explore the school grounds.")
-    print("POP QUIZZES are scattered in some of the rooms so be ready to put your thinking cap on! "
-          "These are mandatory and closed book quizzes... ")
+    print("\x1B[3m" + "You notice a whiteboard with some scribbles on it... " + "\x1B[0m")
+    time.sleep(2)
+    print("You have entered Akademia Matematyczna! Teachers will give you POP QUIZZES during class. "
+          "These are mandatory and closed book. No cheating allowed!")
+    time.sleep(1)
     print("To graduate from the academy, you will need to do these quizzes to reach Grade 3 and take the final exam. "
-          "No cheating allowed!")
+          "Failure to do so will result in your dropping out.")
     time.sleep(1)
-    print("You are now walking inside...")
+    print("The first class starts at 9:00 am. Be ready to put your thinking cap on!")
+    time.sleep(2)
+    print("\x1B[3m" + "You take a look at your watch... 8:59." + "\x1B[0m")
     time.sleep(1)
+    print("\x1B[3m" + "You quickly scramble to find your classroom..." + "\x1B[0m")
     character = make_character(name)
     time.sleep(1)
     print(f"Here are your character stats: {character}")
