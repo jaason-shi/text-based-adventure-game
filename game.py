@@ -192,25 +192,25 @@ def game():
     name = character_name().title()
     print(f"Welcome to Akademia Matematyczna, {name}! "
           f"You have been accepted into our intense program. Only select few are enrolled at our academy :)")
-    time.sleep(2)
+    time.sleep(3)
     school_art()
     print("\x1B[3m" + "You notice a whiteboard with some scribbles on it... " + "\x1B[0m")
-    time.sleep(2)
+    time.sleep(3)
     print("You have entered Akademia Matematyczna! Teachers will give you POP QUIZZES during class. "
           "These are mandatory and closed book. No cheating allowed!")
-    time.sleep(1)
+    time.sleep(2)
     print("To graduate from the academy, you will need to do these quizzes to reach Grade 3 and take the final exam. "
           "Failure to do so will result in your dropping out.")
-    time.sleep(1)
-    print("The first class starts at 9:00 am. Be ready to put your thinking cap on!")
     time.sleep(2)
+    print("The first class starts at 9:00 am. Be ready to put your thinking cap on!")
+    time.sleep(3)
     print("\x1B[3m" + "You take a look at your watch... 8:59." + "\x1B[0m")
-    time.sleep(1)
+    time.sleep(2)
     print("\x1B[3m" + "You quickly scramble to find your classroom..." + "\x1B[0m")
     character = make_character(name)
-    time.sleep(1)
+    time.sleep(2)
     print(f"Here are your character stats: {character}")
-    time.sleep(1)
+    time.sleep(2)
     achieved_goal = False
     while not achieved_goal:
         print_board(board, rows, columns, character)
