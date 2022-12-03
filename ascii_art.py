@@ -1,9 +1,4 @@
-def school_art() -> None:
-    """
-    Print an ascii art of a school.
-
-    """
-    print("""
+school = """
     \_/
   --(_)--  .
     / \   /_|
@@ -12,15 +7,10 @@ def school_art() -> None:
    /____[SCHOOL]___\                                ()))
     | [] .-.-. [] |                                (((())
   ..|____|_|_|____|..................................)(... 
-    """)
-
-
-def grad_cap() -> None:
     """
-    Print an ascii art of a graduation cap.
 
-    """
-    print(""" 
+
+grad_cap = """ 
       _.-'`'-._
    .-'    _    '-.
     `-.__  `\_.-'
@@ -28,15 +18,10 @@ def grad_cap() -> None:
        `-.....-#
               #
               #
-    """)
-
-
-def teacher() -> None:
     """
-    Print an ascii art of a wizard teacher.
 
-    """
-    print("""
+
+teacher = """
                     ____
                   .'* *.'
                __/_*_*(_
@@ -60,4 +45,4 @@ def teacher() -> None:
  _.-'       |      BBb       '-.  '-.
 (___________\____.dBBBb.________)____)
 
-""")
+"""
