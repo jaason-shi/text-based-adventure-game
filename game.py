@@ -34,9 +34,9 @@ def make_character(name: str) -> dict:
     :return: a dictionary with the character stats
 
     >>> make_character('chris')
-    {'Name': 'chris', 'Grade': 1, 'Attempts': 3, 'XP': 0, 'x-coordinate': 5, 'y-coordinate': 5}
+    {'Name': 'Chris', 'Grade': 1, 'Attempts': 3, 'XP': 0, 'x-coordinate': 5, 'y-coordinate': 5}
     """
-    return {'Name': name,
+    return {'Name': name.title(),
             'Grade': 1,
             'Attempts': 3,
             'XP': 0,
