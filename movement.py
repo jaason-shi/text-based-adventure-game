@@ -1,3 +1,6 @@
+import sys
+
+
 def get_user_choice(choices: list) -> int:
     """
     Return the player's inputted choice.
@@ -12,7 +15,9 @@ def get_user_choice(choices: list) -> int:
     for number, choice in enumerate(choices, 1):
         print(number, choice)
     player_choice = int(input("Please enter a number to move: "))
-    if 1 <= player_choice <= len(choices):
+    if player_choice == 5:
+        sys.exit()
+    elif 1 <= player_choice <= len(choices):
         return player_choice
     else:
         print("That doesn't work! Please try again.")
