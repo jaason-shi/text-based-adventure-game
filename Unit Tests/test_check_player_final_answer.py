@@ -1,5 +1,5 @@
 from unittest import TestCase
-from game import check_player_final_answer
+from check_answers import check_player_final_answer
 
 
 class TestCheckPlayerFinalAnswer(TestCase):
