@@ -116,7 +116,7 @@ def player_is_correct(character: dict) -> None:
     elif character['XP'] == 30:
         character["Grade"] += 1
         character["Attempts"] += 3
-        time.sleep(1)
+        time.sleep(2)
         print("Ominous boss music begins to play... the math teacher appears in front of you")
 
 
@@ -192,7 +192,7 @@ def game():
     name = character_name().title()
     print(f"Welcome to Akademia Matematyczna, {name}! "
           f"You have been accepted into our intense program. Only select few are enrolled at our academy :)")
-    time.sleep(2)
+    time.sleep(1)
     school_art()
     print("\x1B[3m" + "You notice a whiteboard with some scribbles on it... " + "\x1B[0m")
     time.sleep(3)
@@ -225,7 +225,7 @@ def game():
             there_is_a_room = check_for_room(character, board)
             if there_is_a_room:
                 riddle_number = randint(0, 12)
-                print(make_riddle(riddle_number))
+                print('🤓 POP QUIZ! 🤓 Here is your question: ', make_riddle(riddle_number))
                 player_answer = get_player_answer()
                 correct_answer = get_correct_answer(riddle_number)
                 if check_player_answer(player_answer, correct_answer):
@@ -241,6 +241,7 @@ def game():
             if check_if_goal_attained(character):
                 time.sleep(2)
                 teacher()
+                time.sleep(2)
                 print('You made it to Grade 3! 🤓 It is time for the final exam... be prepared! 📚'
                       'This is mandatory and closed book. I will find you if you cheat...')
                 time.sleep(2)
@@ -260,7 +261,7 @@ def game():
                     print(f"Here are your character stats: {character}")
 
         else:
-            print("Ah! You can't go there. Please try again...")
+            print("⛔️Ah! You can't go there. ⛔ Please try again...")
             print(f"Your current coordinates are {character['x-coordinate'], character['y-coordinate']}")
             time.sleep(2)
 
