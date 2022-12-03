@@ -32,6 +32,10 @@ def grad_cap() -> None:
 
 
 def teacher() -> None:
+    """
+    Print an ascii art of a wizard teacher.
+
+    """
     print("""
                     ____
                   .'* *.'
