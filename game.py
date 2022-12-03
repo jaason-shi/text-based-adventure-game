@@ -9,7 +9,7 @@ from board import make_board, print_board
 from movement import get_user_choice, validate_move, move_character
 from check_answers import get_player_answer, get_correct_answer, check_player_answer, \
     get_player_final_answer, check_player_final_answer
-from ascii_art import school_art, grad_cap, teacher
+import ascii_art
 
 
 def character_name() -> str:
@@ -193,7 +193,7 @@ def game():
     print(f"Welcome to Akademia Matematyczna, {name}! "
           f"You have been accepted into our intense program. Only select few are enrolled at our academy :)")
     time.sleep(1)
-    school_art()
+    print(ascii_art.school)
     print("\x1B[3m" + "You notice a whiteboard with some scribbles on it... " + "\x1B[0m")
     time.sleep(3)
     print("You have entered Akademia Matematyczna! Teachers will give you POP QUIZZES during class. "
@@ -240,7 +240,7 @@ def game():
             # if character level == 3
             if check_if_goal_attained(character):
                 time.sleep(2)
-                teacher()
+                print(ascii_art.teacher)
                 time.sleep(2)
                 print('You made it to Grade 3! 🤓 It is time for the final exam... be prepared! 📚'
                       'This is mandatory and closed book. I will find you if you cheat...')
@@ -254,7 +254,7 @@ def game():
                 if correct_player_final_answer:
                     achieved_goal = True
                     print("Congratulations! You have graduated from the academy.")
-                    grad_cap()
+                    print(ascii_art.grad_cap)
                 else:
                     character['Grade'] -= 1
                     print("Oh no, you need to go review Grade 2 again...")
