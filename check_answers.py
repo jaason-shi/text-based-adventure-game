@@ -24,6 +24,10 @@ def get_correct_answer(riddle_number: int) -> str:
 
     >>> get_correct_answer(0)
     '9'
+    >>> get_correct_answer(12)
+    '-6'
+    >>> get_correct_answer(5)
+    '0'
     """
     get_riddles = open('riddles.json', 'r')
     riddles = json.load(get_riddles)
