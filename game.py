@@ -187,23 +187,50 @@ def player_is_correct(character: dict) -> None:
 
 
 def player_is_wrong(character: dict) -> None:
+    """
+    Player will lose an attempt and receive a print message if riddle is answered incorrectly.
+
+    :param character: a dictionary
+    :precondition: character must be a dictionary with the character attribute key of 'Attempts'
+    :postcondition: correctly decrements the value of character attempts by 1
+    """
     print("Oh no, that is not correct. You have some reviewing to do.")
     character['Attempts'] -= 1
     print(character)
 
 
 def no_more_attempts(character: dict) -> bool:
+    """
+    Determine if the value of attempts is 0 from the character.
+
+    :param character: a dictionary
+    :precondition: character must be a dictionary with the character attribute key of 'Attempts'
+    :postcondition: correctly determine if the value of character attempts is 0
+    :return: True if character attempts is 0, else False
+    """
     if character['Attempts'] == 0:
         print('You dropped out of the academy. :( Please reapply next year...')
         return True
 
 
 def check_if_goal_attained(character: dict) -> bool:
+    """
+    Determine if the goal of Grade 3 is attained from the character.
+
+    :param character: dictionary
+    :precondition: character must be a dictionary with the character attribute key of 'Grade'
+    :postcondition: correctly determine if value character grade is attained
+    :return: True if character grade is 3, else False
+    """
     if character['Grade'] == 3:
         return True
 
 
-def game():  # called from main
+def game():
+    """
+    Run the game.
+
+    """
     rows = 10
     columns = 10
     movements = ['Up', 'Down', 'Left', 'Right']
@@ -283,6 +310,10 @@ def game():  # called from main
 
 
 def main():
+    """
+    Drive the program.
+
+    """
     game()
 
 
