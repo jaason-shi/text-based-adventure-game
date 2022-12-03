@@ -151,14 +151,12 @@ def no_more_attempts(character: dict) -> bool:
     False
     >>> test_character_two = {'Name': 'chris', 'Grade': 1, 'Attempts': 0, 'XP': 0, 'x-coordinate': 0, 'y-coordinate': 0}
     >>> no_more_attempts(test_character_two)
-    You dropped out of the academy. :( Please reapply next year...
+    I'm sorry to inform you that you have failed all your classes. I will now escort you out of the academy.Please reapply next year and pay the tuition fee again.
     True
     """
     if character['Attempts'] == 0:
         print("I'm sorry to inform you that you have failed all your classes. I will now escort you out of the academy."
               "Please reapply next year and pay the tuition fee again.")
-        time.sleep(2)
-        print("\x1B[3m" + "You are escorted out by the janitor... " + "\x1B[0m")
         return True
     else:
         return False
@@ -248,6 +246,9 @@ def game():
                     player_is_wrong(character)
 
             if no_more_attempts(character):
+                print()
+                time.sleep(2)
+                print("\x1B[3m" + "You are escorted out by the janitor... " + "\x1B[0m")
                 achieved_goal = True
 
             # if character level == 3
