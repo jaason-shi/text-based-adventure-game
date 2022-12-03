@@ -81,6 +81,9 @@ def make_riddle(riddle_number: int) -> str:
     :postcondition: correctly returns value as a string from dictionary key "riddles"
     :postcondition: riddle_number is unchanged
     :return: a string from the dictionary key "riddles" by using the riddle_number as the index
+
+    >>> make_riddle(0)
+    'There are several books on a bookshelf. If one book is the 4th from the left and 6th from the right, how many books are on the shelf?'
     """
     get_riddles = open('riddles.json', 'r')
     riddles = json.load(get_riddles)
@@ -135,6 +138,13 @@ def no_more_attempts(character: dict) -> bool:
     :postcondition: correctly determines if value of character attempts is 0
     :postcondition: character is unchanged
     :return: True if character attempts is 0, else False
+
+    >>> test_character = {'Name': 'chris', 'Grade': 1, 'Attempts': 3, 'XP': 0, 'x-coordinate': 0, 'y-coordinate': 0}
+    >>> no_more_attempts(test_character)
+    False
+    >>> test_character_two = {'Name': 'chris', 'Grade': 1, 'Attempts': 0, 'XP': 0, 'x-coordinate': 0, 'y-coordinate': 0}
+    >>> no_more_attempts(test_character_two)
+    True
     """
     if character['Attempts'] == 0:
         print('You dropped out of the academy. :( Please reapply next year...')
