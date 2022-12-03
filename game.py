@@ -190,6 +190,7 @@ def check_for_room(character: dict, board: dict) -> bool:
     :precondition: character must be a dictionary with the character attribute keys of 'x-coordinate' and 'y-coordinate'
     :precondition: board must be a dictionary representing the current game board
     :postcondition: correctly determines if the character's current room is not hallway
+    :postcondition: character and board are unchanged
     :return: True if character's current room is not hallway, else False
     """
     current_character_coordinate = (character['x-coordinate'], character['y-coordinate'])
