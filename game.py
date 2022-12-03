@@ -9,6 +9,7 @@ from board import make_board, print_board
 from movement import get_user_choice, validate_move, move_character
 from check_answers import get_player_answer, get_correct_answer, check_player_answer, \
     get_player_final_answer, check_player_final_answer
+from ascii_art import school_art, grad_cap
 
 
 def character_name() -> str:
@@ -97,7 +98,7 @@ def player_is_correct(character: dict) -> None:
     elif character['XP'] == 30:
         character["Grade"] += 1
         character["Attempts"] += 3
-        print('You made it to Grade 3! It is time for the final exam... be prepared!')
+        print('You made it to Grade 3! 🤓 It is time for the final exam... be prepared! 📚')
 
 
 def player_is_wrong(character: dict) -> None:
@@ -156,16 +157,7 @@ def game():
     time.sleep(1)
     print("Loading...")
     time.sleep(1.5)
-    print("""
-    \_/
-  --(_)--  .
-    / \   /_|
-          |-|
-    .-----' '-----.                                  __
-   /____[SCHOOL]___\                                ()))
-    | [] .-.-. [] |                                (((())
-  ..|____|_|_|____|..................................)(... 
-    """)
+    print(school_art())
     print("You have entered the math academy! Walk around to explore the school grounds. "
           "There may be a POP QUIZ in some of the rooms so be ready to put your thinking cap on!")
     time.sleep(1)
@@ -212,6 +204,7 @@ def game():
                 if correct_player_final_answer:
                     achieved_goal = True
                     print("Congratulations! You have graduated from the academy.")
+                    print(grad_cap())
                 else:
                     character['Grade'] -= 1
                     print("Oh no, you need to go review Grade 2 again...")
