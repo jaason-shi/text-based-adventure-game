@@ -170,25 +170,43 @@ def get_correct_answer(riddle_number: int) -> str:
 
 
 def check_player_answer(player_answer: str, correct_answer: str) -> bool:
+    """
+    Determine if the player answer is the same as the correct answer.
+
+    :param player_answer: a string
+    :param correct_answer: a string
+    :precondition: player_answer must be a string
+    :precondition: correct_answer must be a string
+    :postcondition: correctly determines if player_answer is same as correct_answer
+    :return: True if player_answer is same as correct_answer, else False
+    """
     if player_answer == correct_answer:
         return True
     else:
         return False
 
 
-def make_final_riddle() -> str:
-    final_riddle = 'Seven boys met each other at a party. ' \
-                   'Each of them shook hands only once with each of the other boys. ' \
-                   'What is the total number of handshakes that took place?'
-    return final_riddle
-
-
 def get_player_final_answer() -> str:
+    """
+    Return user input.
+
+    :postcondition: prints the user input
+    :return: the user input as a string
+    """
     print("Please enter your final answer here: ")
     return input()
 
 
 def check_player_final_answer(final_player_answer: str) -> bool:
+    """
+    Determine if the final player answer is the value 21.
+
+    :param final_player_answer: a string
+    :precondition: final_player_answer must be a string
+    :postcondition: correctly determines if final_player_answer is 21
+    :postcondition: final_player_answer is unchanged
+    :return: True if final_player_answer is the value of 21, else False
+    """
     if final_player_answer == '21':
         return True
     else:
@@ -196,6 +214,17 @@ def check_player_final_answer(final_player_answer: str) -> bool:
 
 
 def player_is_correct(character: dict) -> None:
+    """
+    Character will gain XP and lose an attempt.
+
+    Character will gain XP, attempts, grades if character has reached a certain value of XP.
+
+    :param character: a dictionary
+    :precondition: character must be a dictionary with the character attribute keys of 'XP', 'Attempts' and 'Grades'
+    :postcondition: correctly decrements value of character attempts by 1, increments value of character xp by 10
+    :postcondition: correctly increments value of character grade by 1, attempts by 3 if character xp has reached 10
+    :postcondition: correctly increments value of character grade by 1, attempts by 3 if character xp has reached 30
+    """
     print("Correct! You have gained 10 XP")
     character['XP'] += 10
     character['Attempts'] -= 1
@@ -211,11 +240,11 @@ def player_is_correct(character: dict) -> None:
 
 def player_is_wrong(character: dict) -> None:
     """
-    Player will lose an attempt and receive a print message if riddle is answered incorrectly.
+    Character will lose an attempt and receive a print message.
 
     :param character: a dictionary
     :precondition: character must be a dictionary with the character attribute key of 'Attempts'
-    :postcondition: correctly decrements the value of character attempts by 1
+    :postcondition: correctly decrements value of character attempts by 1
     """
     print("Oh no, that is not correct. You have some reviewing to do.")
     character['Attempts'] -= 1
@@ -228,7 +257,8 @@ def no_more_attempts(character: dict) -> bool:
 
     :param character: a dictionary
     :precondition: character must be a dictionary with the character attribute key of 'Attempts'
-    :postcondition: correctly determine if the value of character attempts is 0
+    :postcondition: correctly determines if value of character attempts is 0
+    :postcondition: character is unchanged
     :return: True if character attempts is 0, else False
     """
     if character['Attempts'] == 0:
@@ -242,7 +272,8 @@ def check_if_goal_attained(character: dict) -> bool:
 
     :param character: dictionary
     :precondition: character must be a dictionary with the character attribute key of 'Grade'
-    :postcondition: correctly determine if value character grade is attained
+    :postcondition: correctly determines if value character grade is attained
+    :postcondition: character is unchanged
     :return: True if character grade is 3, else False
     """
     if character['Grade'] == 3:
@@ -314,7 +345,9 @@ def game():
 
             # if character level == 3
             if check_if_goal_attained(character):
-                print(make_final_riddle())
+                print('Seven boys met each other at a party. '
+                      'Each of them shook hands only once with each of the other boys. '
+                      'What is the total number of handshakes that took place?')
                 final_player_answer = get_player_final_answer()
                 correct_player_final_answer = check_player_final_answer(final_player_answer)
 
