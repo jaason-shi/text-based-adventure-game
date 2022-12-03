@@ -32,6 +32,9 @@ def make_character(name: str) -> dict:
     :postcondition: creates a dictionary with the player's name and their character stats
     :postcondition: name does not change
     :return: a dictionary with the character stats
+
+    >>> make_character('chris')
+    {'Name': 'chris', 'Grade': 1, 'Attempts': 3, 'XP': 0, 'x-coordinate': 5, 'y-coordinate': 5}
     """
     return {'Name': name,
             'Grade': 1,
@@ -52,6 +55,14 @@ def check_for_room(character: dict, board: dict) -> bool:
     :postcondition: correctly determines if the character's current room is not hallway
     :postcondition: character and board are unchanged
     :return: True if character's current room is not hallway, else False
+
+    >>> test_character = {'Name': 'chris', 'Grade': 1, 'Attempts': 3, 'XP': 0, 'x-coordinate': 0, 'y-coordinate': 0}
+    >>> test_board = {(0, 0): 'hallway', (0, 1): 'art room'}
+    >>> check_for_room(test_character, test_board)
+    False
+    >>> test_character_two = {'Name': 'chris', 'Grade': 1, 'Attempts': 3, 'XP': 0, 'x-coordinate': 0, 'y-coordinate': 1}
+    >>> check_for_room(test_character_two, test_board)
+    True
     """
     current_character_coordinate = (character['x-coordinate'], character['y-coordinate'])
     current_room = board[current_character_coordinate]
