@@ -21,6 +21,9 @@ def get_correct_answer(riddle_number: int) -> str:
     :postcondition: correctly returns value as a string from dictionary key "answer"
     :postcondition: riddle_number is unchanged
     :return: a string from the dictionary key "answer" by using the riddle_number as the index
+
+    >>> get_correct_answer(0)
+    '9'
     """
     get_riddles = open('riddles.json', 'r')
     riddles = json.load(get_riddles)
@@ -39,6 +42,11 @@ def check_player_answer(player_answer: str, correct_answer: str) -> bool:
     :postcondition: correctly determines if player_answer is same as correct_answer
     :postcondition: player_answer and correct_answer are unchanged
     :return: True if player_answer is same as correct_answer, else False
+
+    >>> check_player_answer('10', '10')
+    True
+    >>> check_player_answer('7', '17')
+    False
     """
     if player_answer == correct_answer:
         return True
