@@ -1,9 +1,5 @@
 # COMP 1510 202230 
-## Assignment 4 (Make Chris a game!)
-
-Every program needs a README.md
-
-This is written in markdown. Read about markdown here: [markdowncheatsheet](https://www.markdownguide.org/cheat-sheet/)
+## Assignment 4 (Text-Based Adventure Game)
 
 ## Your name:
 - Natalie Yu
